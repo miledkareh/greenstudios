@@ -1,0 +1,5 @@
+
+2017-05-23 18:04:05 : SQL ( Update offers Set status=Inquiry where serial=6)
+2017-05-23 18:04:21 : SQL ( Update offers Set status=Inquiry where serial=110)
+2017-05-23 18:04:37 : SQL ( Update offers Set status=Inquiry where serial=110)
+2017-05-23 18:05:36 : SQL ( Update offers Set status=Inquiry where serial=110)
