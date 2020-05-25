@@ -1,0 +1,267 @@
+﻿
+2020-03-03 10:47:19 : SQL (select 
+	c.email as email from checkin as ch,
+	maintenancedetails as md,maintenances as m,
+	offers as o,
+	customers as c 
+
+	where ch.serial= and ch.visit=md.serial and md.maintenanceid=m.serial and m.offerid=o.serial and o.customerid=c.serial)
+2020-03-04 08:47:28 : SQL (select 
+	c.email as email from checkin as ch,
+	maintenancedetails as md,maintenances as m,
+	offers as o,
+	customers as c 
+
+	where ch.serial= and ch.visit=md.serial and md.maintenanceid=m.serial and m.offerid=o.serial and o.customerid=c.serial)
+2020-03-09 10:27:50 : SQL (select *,(select max(code) from invoicereport) as mcode,(select symbol from currencies where serial=offers.currency) as currencyS from offers where serial=)
+2020-03-09 10:29:50 : SQL (select *,(select max(code) from invoicereport) as mcode,(select symbol from currencies where serial=offers.currency) as currencyS from offers where serial=)
+2020-03-09 10:30:26 : SQL (select *,(select max(code) from invoicereport) as mcode,(select symbol from currencies where serial=offers.currency) as currencyS from offers where serial=)
+2020-03-09 10:31:58 : SQL (select *,(select max(code) from invoicereport) as mcode,(select symbol from currencies where serial=offers.currency) as currencyS from offers where serial=)
+2020-03-19 08:08:28 : SQL (select * from including where companyid=1 and if((select RG from offers where serial=)=1,rg=1,gw=1))
+2020-03-19 09:08:41 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-03-19 08:14:41 : SQL (select * from including where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,rg=1 and gw=1,
+			 if((select RG from offers where serial=)=1,rg=1,
+			 if((select GW from offers where serial=)=1,gw=1,'')))
+			 
+			 )
+2020-03-19 08:15:28 : SQL (select * from including where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,rg=1 and gw=1,
+			 if((select RG from offers where serial=)=1,rg=1,
+			 if((select GW from offers where serial=)=1,gw=1,'')))
+			 
+			 )
+2020-03-19 08:17:18 : SQL (select * from including where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,rg=1 and gw=1,
+			 if((select RG from offers where serial=)=1,rg=1,
+			 if((select GW from offers where serial=)=1,gw=1,'')))
+			 
+			 )
+2020-03-19 08:24:42 : SQL (select * from including where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,rg=1 and gw=1,
+			 if((select RG from offers where serial=)=1,rg=1,
+			 if((select GW from offers where serial=)=1,gw=1,'')))
+			 )
+2020-03-19 09:34:37 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-03-19 08:34:42 : SQL (select * from including where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,rg=1 and gw=1,
+			 if((select RG from offers where serial=)=1,rg=1,
+			 if((select GW from offers where serial=)=1,gw=1,'')))
+			 )
+2020-04-22 12:25:39 : SQL (Insert into itemquantity (dat,size,itemid,qty) values ('2020-04-22','10.9x5 cm',364,'3'))
+2020-04-22 12:26:37 : SQL (Insert into itemquantity (dat,size,itemid,qty) values ('2020-04-22','10.9x5 cm',364,'3'))
+2020-04-22 12:27:23 : SQL (Insert into itemquantity (dat,size,itemid,qty) values ('2020-04-22','10.9x5 cm',364,'3'))
+2020-04-24 08:14:25 : SQL (select *, as ViewQuantity from plantpot where plantid=445)
+2020-05-04 09:14:40 : SQL ()
+2020-05-04 09:14:51 : SQL ()
+2020-05-04 09:16:19 : SQL ()
+2020-05-05 13:25:27 : SQL (select *, as ViewQuantity from itemquantity where itemid=364)
+2020-05-05 13:25:34 : SQL ( UPDATE items SET default1=,cat=,cost=00,usupplier='',idol=0,currency=0,update1=1,description='12 mm thick cement Board backing',ddescription='',code='21',ccode='',group1=01,dimension='',unit='M2',priceusd=00,pricekd=00,priceaed=00 where serial=364)
+2020-05-05 13:25:40 : SQL ( UPDATE items SET default1=,cat=,cost=00,usupplier='',idol=0,currency=0,update1=1,description='12 mm thick cement Board backing',ddescription='',code='21',ccode='',group1=01,dimension='',unit='M2',priceusd=00,pricekd=00,priceaed=00 where serial=364)
+2020-05-05 13:25:57 : SQL (select *, as ViewQuantity from itemquantity where itemid=364)
+2020-05-05 13:33:52 : SQL ( UPDATE items SET default1=,cat=,cost=00,usupplier='',idol=0,currency=0,update1=1,description='12 mm thick cement Board backing',ddescription='',code='0',ccode='',group1=01,dimension='',unit='M2',priceusd=00,pricekd=00,priceaed=00 where serial=364)
+2020-05-05 13:34:03 : SQL ( UPDATE items SET default1=,cat=,cost=00,usupplier='',idol=0,currency=0,update1=1,description='12 mm thick cement Board backing',ddescription='',code='0',ccode='',group1=01,dimension='',unit='M2',priceusd=00,pricekd=00,priceaed=00 where serial=364)
+2020-05-05 13:34:10 : SQL ( UPDATE items SET default1=,cat=,cost=00,usupplier='',idol=0,currency=0,update1=1,description='12 mm thick cement Board backing',ddescription='',code='0',ccode='',group1=01,dimension='',unit='M2',priceusd=00,pricekd=00,priceaed=00 where serial=364)
+2020-05-05 13:34:24 : SQL ( UPDATE items SET default1=,cat=,cost=00,usupplier='',idol=0,currency=0,update1=1,description='12 mm thick cement Board backing',ddescription='',code='0',ccode='',group1=01,dimension='',unit='M2',priceusd=00,pricekd=00,priceaed=00 where serial=364)
+2020-05-05 13:35:26 : SQL ( UPDATE items SET default1=,cat=,cost=00,usupplier='',idol=0,currency=0,update1=1,description='12 mm thick cement Board backing',ddescription='',code='0',ccode='',group1=01,dimension='',unit='M2',priceusd=00,pricekd=00,priceaed=00 where serial=364)
+2020-05-05 13:35:35 : SQL ( UPDATE items SET default1=,cat=,cost=00,usupplier='',idol=0,currency=0,update1=1,description='12 mm thick cement Board backing',ddescription='',code='0',ccode='',group1=01,dimension='',unit='M2',priceusd=00,pricekd=00,priceaed=00 where serial=364)
+2020-05-05 13:35:40 : SQL ( UPDATE items SET default1=,cat=,cost=00,usupplier='',idol=0,currency=0,update1=1,description='12 mm thick cement Board backing',ddescription='',code='0',ccode='',group1=01,dimension='',unit='M2',priceusd=00,pricekd=00,priceaed=00 where serial=364)
+2020-05-06 09:00:24 : SQL ( UPDATE items SET default1=0,cat=,cost=00,usupplier='',idol=0,currency=0,update1=1,description='Green wall indoor build up type T0-G',ddescription='All in one including fixation screws, waterproofing cut off, 1 mm galvanized steel substructure,12 mm waterproofing foam boards, blind end rivets, waterproofing tape, irrigation pipes, drippers and accessories, hydroponic skin type T0, sleeves, SS staples',code='9',ccode='multiple',group1=01,dimension='',unit='M2',priceusd=0500,pricekd=00,priceaed=01620 where serial=2)
+2020-05-06 09:00:30 : SQL ( UPDATE items SET default1=0,cat=,cost=00,usupplier='',idol=0,currency=0,update1=1,description='Green wall indoor build up type T0-G',ddescription='All in one including fixation screws, waterproofing cut off, 1 mm galvanized steel substructure,12 mm waterproofing foam boards, blind end rivets, waterproofing tape, irrigation pipes, drippers and accessories, hydroponic skin type T0, sleeves, SS staples',code='9',ccode='multiple',group1=01,dimension='',unit='M2',priceusd=0500,pricekd=00,priceaed=01620 where serial=2)
+2020-05-06 09:00:40 : SQL ( UPDATE items SET default1=0,cat=,cost=00,usupplier='',idol=0,currency=0,update1=1,description='Green wall indoor build up type T0-G',ddescription='All in one including fixation screws, waterproofing cut off, 1 mm galvanized steel substructure,12 mm waterproofing foam boards, blind end rivets, waterproofing tape, irrigation pipes, drippers and accessories, hydroponic skin type T0, sleeves, SS staples',code='9',ccode='multiple',group1=01,dimension='',unit='M2',priceusd=0500,pricekd=00,priceaed=01620 where serial=2)
+2020-05-06 09:00:46 : SQL ( UPDATE items SET default1=0,cat=,cost=00,usupplier='',idol=0,currency=0,update1=1,description='Green wall indoor build up type T0-G',ddescription='All in one including fixation screws, waterproofing cut off, 1 mm galvanized steel substructure,12 mm waterproofing foam boards, blind end rivets, waterproofing tape, irrigation pipes, drippers and accessories, hydroponic skin type T0, sleeves, SS staples',code='9',ccode='multiple',group1=01,dimension='',unit='M2',priceusd=0500,pricekd=00,priceaed=01620 where serial=2)
+2020-05-06 09:06:49 : SQL ( UPDATE items SET default1=0,cat=,cost=00,usupplier='',idol=0,currency=0,update1=1,description='12 mm thick PVC sheets',ddescription='',code='0',ccode='',group1=01,dimension='',unit='M2',priceusd=00,pricekd=00,priceaed=00 where serial=369)
+2020-05-06 09:06:51 : SQL ( UPDATE items SET default1=0,cat=,cost=00,usupplier='',idol=0,currency=0,update1=1,description='12 mm thick PVC sheets',ddescription='',code='0',ccode='',group1=01,dimension='',unit='M2',priceusd=00,pricekd=00,priceaed=00 where serial=369)
+2020-05-06 09:06:51 : SQL ( UPDATE items SET default1=0,cat=,cost=00,usupplier='',idol=0,currency=0,update1=1,description='12 mm thick PVC sheets',ddescription='',code='0',ccode='',group1=01,dimension='',unit='M2',priceusd=00,pricekd=00,priceaed=00 where serial=369)
+2020-05-06 09:07:01 : SQL ( UPDATE items SET default1=0,cat=,cost=00,usupplier='',idol=0,currency=0,update1=1,description='12 mm thick PVC sheets',ddescription='',code='0',ccode='',group1=01,dimension='',unit='M2',priceusd=00,pricekd=00,priceaed=00 where serial=369)
+2020-05-06 09:07:08 : SQL ( UPDATE items SET default1=0,cat=,cost=00,usupplier='',idol=0,currency=0,update1=1,description='12 mm thick PVC sheets',ddescription='',code='0',ccode='',group1=01,dimension='',unit='M2',priceusd=00,pricekd=00,priceaed=00 where serial=369)
+2020-05-06 09:07:31 : SQL ( UPDATE items SET default1=0,cat=,cost=00,usupplier='',idol=0,currency=0,update1=1,description='12 mm thick PVC sheets',ddescription='',code='0',ccode='',group1=01,dimension='',unit='M2',priceusd=00,pricekd=00,priceaed=00 where serial=369)
+2020-05-06 11:00:10 : SQL (select * from requirements where companyid=)
+2020-05-06 14:00:10 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,948,))
+2020-05-06 11:20:16 : SQL (select * from requirements where companyid=)
+2020-05-06 14:20:16 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-11 07:17:01 : SQL (select *, as ViewQuantity from itemquantity where itemid=364)
+2020-05-11 07:55:13 : SQL (Insert into items (cat,cost,usupplier,idol,update1,description,ddescription,code,ccode,unit,group1,priceusd,dimension,currency,pricekd,priceaed,default1) values (,00,'',0,1,'Smart capacitive proximity sensor     ','Fixed around irrigation pipes at chosen locations and tuned to detect certain flow levels. Connected to microcontroller through CAT signaling. Must be protected from impacts, sun and rain. cables must be protected in a sleeve.','999','90278017','NB',03,0500,'',0,0200,01835,'0'))
+2020-05-11 07:55:15 : SQL (Insert into items (cat,cost,usupplier,idol,update1,description,ddescription,code,ccode,unit,group1,priceusd,dimension,currency,pricekd,priceaed,default1) values (,00,'',0,1,'Smart capacitive proximity sensor     ','Fixed around irrigation pipes at chosen locations and tuned to detect certain flow levels. Connected to microcontroller through CAT signaling. Must be protected from impacts, sun and rain. cables must be protected in a sleeve.','999','90278017','NB',03,0500,'',0,0200,01835,'0'))
+2020-05-11 07:55:15 : SQL (Insert into items (cat,cost,usupplier,idol,update1,description,ddescription,code,ccode,unit,group1,priceusd,dimension,currency,pricekd,priceaed,default1) values (,00,'',0,1,'Smart capacitive proximity sensor     ','Fixed around irrigation pipes at chosen locations and tuned to detect certain flow levels. Connected to microcontroller through CAT signaling. Must be protected from impacts, sun and rain. cables must be protected in a sleeve.','999','90278017','NB',03,0500,'',0,0200,01835,'0'))
+2020-05-11 07:55:28 : SQL (Insert into items (cat,cost,usupplier,idol,update1,description,ddescription,code,ccode,unit,group1,priceusd,dimension,currency,pricekd,priceaed,default1) values (,00,'',0,1,'Smart capacitive proximity sensor     ','Fixed around irrigation pipes at chosen locations and tuned to detect certain flow levels. Connected to microcontroller through CAT signaling. Must be protected from impacts, sun and rain. cables must be protected in a sleeve.','999','90278017','NB',03,0500,'',0,0200,01835,'0'))
+2020-05-11 07:55:33 : SQL (Insert into items (cat,cost,usupplier,idol,update1,description,ddescription,code,ccode,unit,group1,priceusd,dimension,currency,pricekd,priceaed,default1) values (,00,'',0,1,'Smart capacitive proximity sensor     ','Fixed around irrigation pipes at chosen locations and tuned to detect certain flow levels. Connected to microcontroller through CAT signaling. Must be protected from impacts, sun and rain. cables must be protected in a sleeve.','999','90278017','NB',03,0500,'',0,0200,01835,'0'))
+2020-05-11 07:58:43 : SQL (Insert into items (cat,cost,usupplier,idol,update1,description,ddescription,code,ccode,unit,group1,priceusd,dimension,currency,pricekd,priceaed,default1) values (,00,'',0,1,'Smart capacitive proximity sensor     ','Fixed around irrigation pipes at chosen locations and tuned to detect certain flow levels. Connected to microcontroller through CAT signaling. Must be protected from impacts, sun and rain. cables must be protected in a sleeve.','999','90278017','NB',03,0500,'',0,0200,01835,'0'))
+2020-05-22 11:54:15 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-22 11:55:26 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-22 11:56:25 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-22 11:57:34 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-22 11:58:18 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-22 11:58:56 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-22 11:59:18 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-22 12:00:25 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-22 12:00:32 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-22 12:00:33 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-22 12:00:37 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-22 12:01:08 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-22 09:01:45 : SQL (select * from requirements where companyid=)
+2020-05-22 12:01:45 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-22 12:02:18 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-22 12:02:24 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-22 12:02:35 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-22 12:04:02 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-22 12:05:28 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-22 12:06:16 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-22 12:06:48 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-22 12:06:58 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-22 12:07:26 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-22 12:08:30 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-22 12:09:07 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-22 12:09:23 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-22 12:14:52 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-22 12:15:04 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-22 12:15:40 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-22 12:16:56 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-22 12:22:37 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-22 12:24:04 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-22 12:24:18 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-22 12:24:53 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,989,))
+2020-05-22 12:25:44 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-05-22 09:25:49 : SQL (select * from including where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,(rg=1 or gw=1),
+			 if((select RG from offers where serial=)=1,rg=1,
+			 if((select GW from offers where serial=)=1,gw=1,'')))
+			 )
+2020-05-22 09:25:49 : SQL (select * from requirements where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,(rg_checkbox=1 or gw_checkbox=1),
+			 if((select RG from offers where serial=)=1,rg_checkbox=1,
+			 if((select GW from offers where serial=)=1,gw_checkbox=1,'')))
+			 )
+2020-05-22 12:26:24 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-05-22 09:27:13 : SQL (select * from including where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,(rg=1 or gw=1),
+			 if((select RG from offers where serial=)=1,rg=1,
+			 if((select GW from offers where serial=)=1,gw=1,'')))
+			 )
+2020-05-22 12:28:12 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-05-22 09:28:18 : SQL (select * from including where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,(rg=1 or gw=1),
+			 if((select RG from offers where serial=)=1,rg=1,
+			 if((select GW from offers where serial=)=1,gw=1,'')))
+			 )
+2020-05-22 12:29:47 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-05-22 09:29:50 : SQL (select * from including where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,(rg=1 or gw=1),
+			 if((select RG from offers where serial=)=1,rg=1,
+			 if((select GW from offers where serial=)=1,gw=1,'')))
+			 )
+2020-05-22 12:30:37 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-05-22 09:30:39 : SQL (select * from including where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,(rg=1 or gw=1),
+			 if((select RG from offers where serial=)=1,rg=1,
+			 if((select GW from offers where serial=)=1,gw=1,'')))
+			 )
+2020-05-22 12:31:20 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-05-22 09:31:23 : SQL (select * from including where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,(rg=1 or gw=1),
+			 if((select RG from offers where serial=)=1,rg=1,
+			 if((select GW from offers where serial=)=1,gw=1,'')))
+			 )
+2020-05-22 12:33:54 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-05-22 09:33:56 : SQL (select * from including where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,(rg=1 or gw=1),
+			 if((select RG from offers where serial=)=1,rg=1,
+			 if((select GW from offers where serial=)=1,gw=1,'')))
+			 )
+2020-05-22 12:34:29 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-05-22 09:34:32 : SQL (select * from including where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,(rg=1 or gw=1),
+			 if((select RG from offers where serial=)=1,rg=1,
+			 if((select GW from offers where serial=)=1,gw=1,'')))
+			 )
+2020-05-22 12:34:47 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-05-22 09:34:49 : SQL (select * from including where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,(rg=1 or gw=1),
+			 if((select RG from offers where serial=)=1,rg=1,
+			 if((select GW from offers where serial=)=1,gw=1,'')))
+			 )
+2020-05-22 12:35:36 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-05-22 09:35:39 : SQL (select * from including where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,(rg=1 or gw=1),
+			 if((select RG from offers where serial=)=1,rg=1,
+			 if((select GW from offers where serial=)=1,gw=1,'')))
+			 )
+2020-05-22 12:36:11 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-05-22 09:36:13 : SQL (select * from including where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,(rg=1 or gw=1),
+			 if((select RG from offers where serial=)=1,rg=1,
+			 if((select GW from offers where serial=)=1,gw=1,'')))
+			 )
+2020-05-22 09:36:13 : SQL (select * from requirements where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,(rg_checkbox=1 or gw_checkbox=1),
+			 if((select RG from offers where serial=)=1,rg_checkbox=1,
+			 if((select GW from offers where serial=)=1,gw_checkbox=1,'')))
+			 )
+2020-05-22 12:36:34 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-05-22 09:36:37 : SQL (select * from including where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,(rg=1 or gw=1),
+			 if((select RG from offers where serial=)=1,rg=1,
+			 if((select GW from offers where serial=)=1,gw=1,'')))
+			 )
+2020-05-22 09:36:37 : SQL (select * from requirements where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,(rg_checkbox=1 or gw_checkbox=1),
+			 if((select RG from offers where serial=)=1,rg_checkbox=1,
+			 if((select GW from offers where serial=)=1,gw_checkbox=1,'')))
+			 )
+2020-05-22 12:38:40 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-05-22 09:38:43 : SQL (select * from including where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,(rg=1 or gw=1),
+			 if((select RG from offers where serial=)=1,rg=1,
+			 if((select GW from offers where serial=)=1,gw=1,'')))
+			 )
+2020-05-22 09:38:43 : SQL (select * from requirements where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,(rg_checkbox=1 or gw_checkbox=1),
+			 if((select RG from offers where serial=)=1,rg_checkbox=1,
+			 if((select GW from offers where serial=)=1,gw_checkbox=1,'')))
+			 )
+2020-05-22 12:39:45 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-05-22 09:39:47 : SQL (select * from including where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,(rg=1 or gw=1),
+			 if((select RG from offers where serial=)=1,rg=1,
+			 if((select GW from offers where serial=)=1,gw=1,'')))
+			 )
+2020-05-22 09:39:50 : SQL (select * from requirements where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,(rg_checkbox=1 or gw_checkbox=1),
+			 if((select RG from offers where serial=)=1,rg_checkbox=1,
+			 if((select GW from offers where serial=)=1,gw_checkbox=1,'')))
+			 )
+2020-05-22 12:43:55 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-05-22 09:43:57 : SQL (select * from including where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,(rg=1 or gw=1),
+			 if((select RG from offers where serial=)=1,rg=1,
+			 if((select GW from offers where serial=)=1,gw=1,'')))
+			 )
+2020-05-22 09:43:58 : SQL (select * from requirements where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,(rg_checkbox=1 or gw_checkbox=1),
+			 if((select RG from offers where serial=)=1,rg_checkbox=1,
+			 if((select GW from offers where serial=)=1,gw_checkbox=1,'')))
+			 )
+2020-05-22 12:45:12 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-05-22 09:45:15 : SQL (select * from including where companyid=2 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,(rg=1 or gw=1),
+			 if((select RG from offers where serial=)=1,rg=1,
+			 if((select GW from offers where serial=)=1,gw=1,'')))
+			 )
+2020-05-22 09:45:15 : SQL (select * from requirements where companyid=2 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,(rg_checkbox=1 or gw_checkbox=1),
+			 if((select RG from offers where serial=)=1,rg_checkbox=1,
+			 if((select GW from offers where serial=)=1,gw_checkbox=1,'')))
+			 )
+2020-05-22 09:45:17 : SQL (select * from requirements where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,(rg_checkbox=1 or gw_checkbox=1),
+			 if((select RG from offers where serial=)=1,rg_checkbox=1,
+			 if((select GW from offers where serial=)=1,gw_checkbox=1,'')))
+			 )
+2020-05-22 09:45:17 : SQL (select * from including where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,(rg=1 or gw=1),
+			 if((select RG from offers where serial=)=1,rg=1,
+			 if((select GW from offers where serial=)=1,gw=1,'')))
+			 )
+2020-05-22 10:59:03 : SQL (Insert into plantpot (dat,type,size,plantid,qty,cost,country) values ('','','',445,,0,''))
+2020-05-22 11:04:13 : SQL (Insert into plantpot (dat,type,size,plantid,qty,cost,country) values ('2020-05-22','POT','',445,,0,''))
+2020-05-22 16:31:11 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,990,))
