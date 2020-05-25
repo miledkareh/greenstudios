@@ -1,0 +1,40 @@
+- timeout during working
+- link from customers to offer - task - order
+- order to offer at first and then to be set as order
+- test in order is binding
+- print house predifined page
+-country city, referal only in client
+-show offer type in offer list + due date at 
+-remove code from offer list
+-ref# automatic and place on top
+-add offer type in task
+-on pressing done put completed automatically
+-join user with employee
+-employee image
+-add attachment to request
+-salary
+-hourly = salary/208
+-
+
+
+next to pantone add silk screen................
+powder ink same as pantome (multiselect)
+water based MATT
+Water based Gloss (seperate) predifined with "type of coating"
+drop down to join (recto, recto/verso, verso,bascule,balancier) "Printing Method"
+remove description next to binding (test)
+puch join with folding remove description instead print house
+changing lamination to "type of coating" predifined + print house next to it
+embossing debossing predefined with folding
+rename folding to finishing
+hot foil same as pantome but with other predifined table
+sopt uv also under "type of Coating"
+uv varnish under "Type of coating"
+die cut and final cutting under finishing
+mold a predifined table by itself (autonumber,description, supplier, date, attachments) + multiselect
+clichet, film, mold and plates under plates to be renamed "Tools"
+perforation under finishing
+
+
+
+

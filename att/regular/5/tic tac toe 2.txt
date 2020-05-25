@@ -1,0 +1,468 @@
+#include <stdio.h>
+#include<conio.h>
+#include <windows.h>
+
+//Level 1
+int Level1(int l2)
+{
+int player = 0,x,y,c=0,i;
+int winner = 0; 
+int choice = 0; 
+int row = 0; 
+int column = 0; 
+int line = 0; 
+char board [3][3] = { 
+{'1','2','3'}, 
+{'4','5','6'}, 
+{'7','8','9'} 
+}; 
+
+printf("You have X, I have O.\n\n");
+
+printf("Board Positions:\n");
+
+for (i = 0; i<9 && winner==0; i++) 
+{ 
+printf("\n\n"); 
+printf(" %c | %c | %c\n", board[0][0], board[0][1], board[0][2]); 
+printf("---|---|---\n"); 
+printf(" %c | %c | %c\n", board[1][0], board[1][1], board[1][2]); 
+printf("---|---|---\n"); 
+printf(" %c | %c | %c\n", board[2][0], board[2][1], board[2][2]); 
+player = i%2 + 1; 
+do 
+{ if(player==2)
+	{printf("\n My turn...\n");
+
+Sleep( 1500 );
+
+for(x=0,c=0;x<3&&c==0;x++)
+{for(y=0;y<3&&c==0;y++)
+if(board[x][y]<'9')
+{board[x][y]='O';
+c++;}
+}break;
+}
+
+printf("\nYour move:"); 
+scanf("%d", &choice); 
+
+row = --choice/3; 
+column = choice%3; 
+
+}	while(choice<0 || choice>9 || board [row][column]>'9');
+
+if(player==1)board[row][column]='X';
+if((board[0][0]==board[1][1] && board[0][0]==board[2][2]) || (board[0][2]==board[1][1] && board[0][2]==board[2][0])) 
+	winner = player;
+else for(line = 0; line <=2; line++) 
+if((board[line][0]==board[line][1] && board[line][0]==board[line][2])|| (board[0][line]==board[1][line] && board[0][line]==board[2][line])) 
+winner = player; 
+}
+	printf(" %c | %c | %c\n", board[0][0], board[0][1], board[0][2]); 
+	printf("---|---|---\n"); 
+	printf(" %c | %c | %c\n", board[1][0], board[1][1], board[1][2]); 
+	printf("---|---|---\n"); 
+	printf(" %c | %c | %c\n\n", board[2][0], board[2][1], board[2][2]); 
+
+if(winner==0) 
+	printf("*----------* DRAW! *----------*\n\n"); 
+
+else if(player==1)
+	printf("*----------* Congratulations, YOU WON! *----------*\n\n");
+
+else
+	printf("*----------* I WON! *----------*\n\n");
+
+do{ 
+	printf("Press '1' to play again, or '0' to quit.\n");
+    scanf("%d",&x);
+}while(x<0 || x>1);
+return x;}
+
+
+
+//Level 2
+int Level2(int l3)
+	{int player = 0,l=0,p=0,x,y,z=0,c=0,i,n=0,m=0,k=0,a=0,h=0,r=0,t=0;
+int winner = 0,s=0,w=0; 
+int choice = 0; 
+int row = 0; 
+int column = 0; 
+int line = 0; 
+char board [3][3] = { 
+{'1','2','3'}, 
+{'4','5','6'}, 
+{'7','8','9'} 
+}; 
+int EndGame=1; 
+
+printf("You have X, I have O.\n\n");
+
+printf("Board Positions:\n");
+
+
+for (i = 0; i<9 && winner==0; i++) 
+{ 
+	printf("\n\n"); 
+	printf(" %c | %c | %c\n", board[0][0], board[0][1], board[0][2]); 
+	printf("---|---|---\n"); 
+	printf(" %c | %c | %c\n", board[1][0], board[1][1], board[1][2]); 
+	printf("---|---|---\n"); 
+	printf(" %c | %c | %c\n", board[2][0], board[2][1], board[2][2]); 
+	player = i%2 + 1; 
+
+
+do 
+{ if(player==2)
+	{printf("\n\nMy move... \n");
+
+
+if(i == 7)
+{
+	printf("I'm thinking, Please wait...\n");
+	Sleep( 5000 ) ;
+}
+
+else
+	Sleep( 2000 ) ;
+
+
+for(x=0,c=0;x<3&&c==0;x++)
+	{for(y=0;y<3&&c==0;y++)
+
+if(board[0][0]=='O' && board[0][0]==board[0][1])
+	{if(board[0][2]<='9')
+	{board[0][2]='O';c++;}}
+	
+else if(board[0][2]=='O' && board[0][2]==board[0][1])
+	{if(board[0][0]<='9')
+	{board[0][0]='O';c++;}}
+	
+else if(board[1][0]=='O' && board[1][0]==board[1][1])
+	{if(board[1][2]<='9')
+	{board[1][2]='O';c++;}}	
+	
+else if(board[1][1]=='O' && board[1][1]==board[1][2])
+	{if(board[1][0]<='9')
+	{board[1][0]='O';c++;}}	
+	
+else if(board[0][1]=='O' && board[0][1]==board[1][1])
+	{if(board[2][1]<'9')
+	{board[2][1]='O';c++;}}	
+	
+else if(board[2][0]=='O' && board[2][0]==board[2][1])
+	{if(board[2][2]<='9')
+	{board[2][2]='O';c++;}}
+	
+else if(board[2][1]=='O' && board[2][1]==board[2][2])
+	{if(board[2][0]<='9')
+	{board[2][0]='O';c++;}}
+
+else if(board[0][0]=='O' && board[0][0]==board[1][0])
+	{if(board[2][0]<='9')
+	{board[2][0]='O';c++;}}
+			
+else if(board[1][0]=='O' && board[1][0]==board[2][0])
+	{if(board[0][0]<='9')
+	{board[0][0]='O';c++;}}
+
+else if(board[0][2]=='O' && board[0][2]==board[1][2])
+	{if(board[2][2]<='9')
+	{board[2][2]='O';c++;}}
+	
+else if(board[2][0]=='O' && board[2][0]==board[1][1])
+	{if(board[0][2]<='9')
+	{board[0][2]='O';c++;}}
+	
+else if(board[2][2]=='O' && board[2][2]==board[0][2])
+	{if(board[1][1]<='9')
+	{board[1][1]='O';c++;}}		
+
+else if(board[0][0]=='O' && board[0][0]==board[0][2])
+	{if(board[0][1]<='9')
+	{board[0][1]='O';c++;}}	
+	
+else if(board[0][0]=='O' && board[0][0]==board[2][0])
+	{if(board[1][0]<='9')
+	{board[1][0]='O';c++;}}
+
+else if(board[0][0]=='X' && board[0][0]==board[1][1] && z==0)
+	{if(board[2][2]<='9')
+	{board[2][2]='O';c++;}z++;}
+
+else if(board[0][0]=='X' && board[0][0]==board[2][2] && l==0)
+	{if(board[1][1]<'9')
+	{board[1][1]='O';c++;}l++;}
+
+else if(board[0][2]=='X' && board[0][2]==board[2][2] && n==0)
+	{if(board[1][2]<'9')
+	{board[1][2]='O';c++;}n++;}
+
+else if(board[0][0]=='X' && m==0)
+	{if(board[1][1]<='5')
+	{board[1][1]='O';c++;}m++;}
+
+else if(board[0][0]=='X' && board[0][0]==board[2][0] && k==0)
+	{if(board[1][0]<'9')
+	{board[1][0]='O';c++;}k++;}
+
+else if(board[1][0]=='X' && board[1][0]==board[1][1] && a==0)
+	{if(board[1][2]<'9')
+	{board[1][2]='O';c++;}a++;}
+
+else if(board[1][1]=='X' && board[2][2]==board[1][1] && s==0)
+	{if(board[0][2]<'9')
+	{board[0][2]='O';c++;}s++;}
+
+else if(board[2][0]=='X' && board[2][0]==board[2][1] && r==0)
+	{if(board[2][2]<='9')
+	{board[2][2]='O';c++;}r++;}
+
+else if(board[1][0]=='X' && board[1][0]==board[1][2] && t==0)
+	{if(board[1][1]<='9')
+	{board[1][1]='O';c++;}t++;}
+
+else if(board[2][2]=='X' && board[2][2]==board[1][2] && w==0)
+	{if(board[0][2]<='9')
+	{board[0][2]='O';c++;}w++;}
+
+
+
+
+else if(board[x][y]<'9')
+{board[x][y]='O';
+c++;}
+}break;}
+do{printf("\nYour move: "); 
+scanf("%d", &choice);}while(choice<1 || choice>9);
+row = --choice/3; 
+column = choice%3; 
+}while(choice<0 || choice>3 || board [row][column]>'9');
+if(player==1)board[row][column]='X';
+if((board[0][0]==board[1][1] && board[0][0]==board[2][2]) || (board[0][2]==board[1][1] && board[0][2]==board[2][0])) 
+	winner = player;
+else for(line = 0; line <=2; line++) 
+if((board[line][0]==board[line][1] && board[line][0]==board[line][2])|| (board[0][line]==board[1][line] && board[0][line]==board[2][line])) 
+winner = player; 
+}
+printf(" %c | %c | %c\n", board[0][0], board[0][1], board[0][2]); 
+printf("---|---|---\n"); 
+printf(" %c | %c | %c\n", board[1][0], board[1][1], board[1][2]); 
+printf("---|---|---\n"); 
+printf(" %c | %c | %c\n", board[2][0], board[2][1], board[2][2]); 
+
+if(winner==0) 
+	printf("*----------* DRAW! *----------*\n\n"); 
+
+else if(player==1)
+	printf("*----------* Congratulations, YOU WON! *----------*\n\n");
+
+else
+	printf("*----------* I WON! *----------*\n\n");
+
+
+
+do{ 
+	printf("Press '1' to play again, or '0' to quit.\n");
+    scanf("%d",&x);
+}while(x<0 || x>1);
+return x;}
+
+
+
+
+
+//Level 3
+int Level3( int l4)
+	{int player = 0,p,x,y,c=0,j=0,t=0,m=0,k=0,o=0,v=0,e=0;
+int winner = 0,w=0,y3=0,i=0 ,n1,c1=0,u=0; 
+int choice = 0,y1=0,y2=0,choice1; 
+int line = 0; 
+char board [100][100]={ };
+int EndGame=1; 
+do{printf("Enter the size: ");
+scanf("%d",&n1);
+}while(n1<3 || n1%2==0);
+printf("You have X, I have O.\n\n");
+
+printf("Board Positions:\n");
+for (i = 0,c1=0; i<n1*n1 && winner==0; i++) 
+{ 
+	printf("\n\n"); 
+	for(x=0;x<n1;x++)
+	{for(y=0;y<n1;y++,c1++)
+		{printf(" %c |",board[x][y]);}printf("\n");
+	for(y=0;y<n1;y++)
+	printf("---|");
+	printf("\n");
+	}player = i%2 + 1; 
+
+
+do 
+{ if(player==2)
+	{printf("\n\nMy move... \n");
+
+
+if(i == 7)
+{
+	printf("I'm thinking, Please wait...\n");
+	Sleep( 5000 ) ;
+}
+
+else
+	Sleep( 2000 ) ;
+
+
+for(x=0,c=0;x<n1&&c==0;x++)
+	{for(y=0,m=0,y1=0;y<n1&&c==0;y++)
+{
+if(board[x][y]=='X')
+	y1++;
+}
+	if(y1>=n1-1)
+	{ for(y=0;y<n1&&m==0;y++){
+	if(board[x][y]!='X' && board[x][y]!='O')
+			m++;}
+	if(m!=0)	
+	{--y;
+	board[x][y]='O';c++;}
+}}
+if(c==0)
+for(x=0;x<n1&&c==0;x++)
+   {for(y=0,m=0,y1=0;y<n1&&c==0;y++)
+   		{if(board[y][x]=='X')
+   			y1++;}
+   	if(y1>=n1-2)
+	{for(y=0;y<n1&&m==0;y++)
+	if(board[y][x]!='X' && board[y][x]!='O')
+			m++;}	
+		if(m!=0)	
+	{--y;
+	board[y][x]='O';c++;}			
+	}
+if(c==0)
+{for(x=0,y=0,y1=0;x<n1;x++,y++)
+	{if(board[x][y]=='X')
+		y1++;}
+	if(y1>=n1-1)
+	{{for(x=0,y=0,m=0;x<n1&&m==0;x++,y++)
+		{if(board[x][y]!='X' && board[x][y]!='O')
+			m++;}}
+	if(m!=0)
+	{--y;--x;
+	board[x][y]='O';c++;}
+}}
+if(c==0)
+{for(x=0,y=n1-1,y1=0;x<n1;x++,y--)
+	{if(board[x][y]=='X')
+		y1++;}
+	if(y1>=n1-2)
+	{{for(x=0,y=n1-1,m=0;x<n1&&m==0;x++,y--)
+		{if(board[x][y]!='X' && board[x][y]!='O')
+			m++;}}
+	if(m!=0)
+	{++y;--x;
+	board[x][y]='O';c++;}
+	}}
+
+if(c==0)
+	{for(x=0;x<n1&&c==0;x++)
+		{for(y=0;y<n1&&c==0;y++)
+			{if(board[x][y]!='X' && board[x][y]!='O')
+				{board[x][y]='O';c++;}}}
+c++;}
+break;}				
+
+do{printf("\nYour move: "); 
+	printf("please enter ligne number: \n");
+scanf("%d", &choice);}while(choice<0 || choice>n1-1);
+do{	printf("please enter column number: ");
+	scanf("%d",&choice1);}while(choice1<0 || choice1>n1-1);
+}while(choice<0 || choice>n1-1 || board [choice][choice1]>'9');
+if(player==1)board[choice][choice1]='X';
+for(j=0,v=0;j<n1;j++,v++)
+	{p=board[j][v];
+	if(p==board[j][v])
+		k++;}
+		k--;
+		if(k==n1)
+winner = player;
+else for(line = 0; line <n1&&w==0; line++)
+		  {for(u=1,t=board[line][0],e=0;u<n1;u++)
+		  	{
+		  		if(t=='O' || t=='X')
+		  	{if(t==board[line][u])
+		  		e++;}}
+				if(e==n1-1)
+					w++;}
+if(w!=0)						
+winner = player;
+else
+{for(line = 0; line <n1&&w==0; line++)
+		  {for(u=1,t=board[line][0],e=0;u<n1;u++)
+		  	{
+		  		if(t=='O' || t=='X')
+		  	{if(t==board[u][line])
+		  		e++;}}
+				if(e==n1-1)
+					w++;}
+if(w!=0)						
+winner = player;
+}}
+for(x=0;x<n1;x++)
+	{for(y=0;y<n1;y++)
+		{printf(" %c |",board[x][y]);}
+		printf("\n");
+		for(y=0;y<n1;y++)
+	{printf("---|");}
+	printf("\n");}
+
+if(winner==0) 
+	printf("*----------* DRAW! *----------*\n\n"); 
+
+else if(player==1)
+	printf("*----------* Congratulations, YOU WON! *----------*\n\n");
+
+else
+	printf("*----------* I WON! *----------*\n\n");
+
+
+
+do{ 
+	printf("Press '1' to play again, or '0' to quit.\n");
+    scanf("%d",&x);
+}while(x<0 || x>1);
+return x;}
+
+int main() 
+{ 
+
+	int level,start;
+
+do{	printf("\n\n--------------------* Welcome to TicTacToe Game *--------------------\n");
+printf("---* Designed by: Elie Fares, Miled El Kareh & Angelo Maalouf *---\n\n");
+
+
+printf("Choose game level: 1-Easy  2-Medium  3-Hard (Or press '0' to quit)\n\n");
+scanf("%d",&level);
+
+switch(level)
+{
+case 0: break;
+case 1: start=Level1(level);	break;
+case 2: start=Level2(level);	break;
+case 3: start=Level3(level);	break;
+default:start=1;break; 
+}
+printf("\n\n\n");
+
+if(level==0)
+	start=0;
+
+}while(start==1);
+
+
+ 
+getch();
+}

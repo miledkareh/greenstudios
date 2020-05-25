@@ -1,0 +1,4 @@
+SELECT code, COUNT(code) 
+FROM item
+GROUP BY code
+HAVING ( COUNT(code) > 1 )
