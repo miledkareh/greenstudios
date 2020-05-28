@@ -424,8 +424,8 @@ if(isset($_POST['available'])){
 }
 $query = "
  Select *,
- (select sum(qty) from plantpot where plantid=plants.serial and type='Tray') as tray,
-(select sum(qty) from plantpot where plantid=plants.serial and type='POT') as pot,
+ (select  qty  from plantpot where plantid=plants.serial and type='Tray' order by dat desc limit 1) as tray,
+(select   qty  from plantpot where plantid=plants.serial and type='POT' order by dat desc limit 1) as pot,
 (select sum(qty*cost) from plantpot where plantid=plants.serial) as total,(select url from plantattachment where plantid=plants.serial limit 1) as image From plants where serial <> 0 $available";
 
 if(sizeof($_POST["flocation"])>0  && implode("','",$_POST["flocation"])!='0'){

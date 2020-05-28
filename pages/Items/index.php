@@ -443,6 +443,7 @@ mysqli_data_seek($results, 0);
                 <th>Date</th>
 					<th>Size</th>
 					<th>Quantity</th>
+          <th>Difference</th>
                     <?php if ($_SESSION['ViewQuantity']==1){?>
 					<th>Action</th>
                     <?php }?>

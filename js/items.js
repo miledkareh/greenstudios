@@ -342,6 +342,12 @@ function populateQuantity(data)
 				item+=   "<td>"+row.size+"</td>";
 				
                 item+=   "<td>"+row.qty+"</td>";
+if(index==0)
+item+=   "<td>0</td>";
+else {
+item+=   "<td>"+row.qty+"</td>";
+}
+                 item+=   "<td>"+row.qty+"</td>";
 				if(row.ViewQuantity==1){
                 item+="<td><a  id='Editt_"+row.serial+"'  data-toggle='modal' data-target='#myModal2' ><p class='fa fa-edit'></p></a>&nbsp;";
   

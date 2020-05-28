@@ -265,3 +265,4 @@
 2020-05-22 10:59:03 : SQL (Insert into plantpot (dat,type,size,plantid,qty,cost,country) values ('','','',445,,0,''))
 2020-05-22 11:04:13 : SQL (Insert into plantpot (dat,type,size,plantid,qty,cost,country) values ('2020-05-22','POT','',445,,0,''))
 2020-05-22 16:31:11 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,990,))
+2020-05-27 06:55:40 : SQL ()
