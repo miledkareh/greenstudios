@@ -1,12 +1,12 @@
 <?php
 require_once('UTILS.class.php');
-$dbc = mysqli_connect("localhost", "root", "", "greenstudios");
+$dbc = mysqli_connect("localhost", "root", "djGj5DAzFChLpm", "greenstudios");
 class DAL{
 
 	//private members for configurations
 	 private $servername = "localhost";
 	 private $username="root";
-	 private $password="";
+	 private $password="djGj5DAzFChLpm";
 	 private $dbname="greenstudios";
 
 	
