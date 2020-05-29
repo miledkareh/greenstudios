@@ -30,7 +30,7 @@ date_default_timezone_set("Asia/Beirut");
  else if($sp1=="No"||$sp1==" No")$alarm=0;
  else $alarm=-1;
 
- $con=mysqli_connect("localhost","root","","greenstudios");
+ $con=mysqli_connect("localhost","root","djGj5DAzFChLpm","greenstudios");
 
    if (mysqli_connect_errno($con)) {
       echo "Failed to connect to MySQL: " . mysqli_connect_error();

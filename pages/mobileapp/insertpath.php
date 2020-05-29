@@ -6,7 +6,7 @@ $sess=$_POST['sess'];
  
 date_default_timezone_set("Asia/Beirut");
  // $con=mysqli_connect("localhost","dsoflbne_dsoft","dsoft@123","dsoflbne_greenstudios");
- $con=mysqli_connect("localhost","root","","greenstudios");
+ $con=mysqli_connect("localhost","root","djGj5DAzFChLpm","greenstudios");
    if (mysqli_connect_errno($con)) {
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
    }

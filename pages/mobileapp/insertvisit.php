@@ -10,7 +10,7 @@ $sess=$_POST['sess'];
  $gooddat=$dat." ".$da.":".$mi;
 date_default_timezone_set("Asia/Beirut");
 
-	 $con=mysqli_connect("localhost","root","","greenstudios");
+	 $con=mysqli_connect("localhost","root","djGj5DAzFChLpm","greenstudios");
   
 
    if (mysqli_connect_errno($con)) {

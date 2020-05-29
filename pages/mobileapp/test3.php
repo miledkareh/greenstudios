@@ -2,7 +2,7 @@
 $action=$_POST['action'];
 
 
- $con=mysqli_connect("localhost","root","","greenstudios");
+ $con=mysqli_connect("localhost","root","djGj5DAzFChLpm","greenstudios");
 
    if (mysqli_connect_errno($con)) {
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -44,7 +44,7 @@ where  checkin.checkout=0
 and offers.Serial=maintenances.offerId
 and checkin.visit=maintenancedetails.Serial
 and maintenances.Serial=maintenancedetails.maintenanceid
-and maintenancedetails.UserId='".$User."' order by checkin.dat DESC ");
+and checkin.UserId='".$User."' order by checkin.dat DESC ");
 
 
    while($row = mysqli_fetch_array($result)){

@@ -3,7 +3,7 @@ $action=$_POST['action'];
 $detail=$_POST['detail'];
  
 
- $con=mysqli_connect("localhost","root","","greenstudios");
+ $con=mysqli_connect("localhost","root","djGj5DAzFChLpm","greenstudios");
 
    if (mysqli_connect_errno($con)) {
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
