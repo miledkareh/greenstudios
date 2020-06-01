@@ -313,9 +313,9 @@ $valuecurrency=$_GET['valuecurrency'];
 		$sql="delete from offers where saved=1";
 		$db = new DAL();		
 		$data=$db->ExecuteQuery($sql);
-		// $sql="Insert into offers (saved) values(1)";
-		// $db = new DAL();		
-		// $data=$db->ExecuteQuery($sql);
+		$sql="Insert into offers (saved) values(1)";
+		$db = new DAL();		
+		$data=$db->ExecuteQuery($sql);
 		}
 		else if ($action==5)
 		{
