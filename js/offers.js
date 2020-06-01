@@ -1279,7 +1279,8 @@ $("#title").html("Add Project");
             };
            }
         });
-				  	 window.history.replaceState(null, null, "index.php?x="+ID);
+		        alert();
+				  	 window.history.replaceState({}, null, "/index.php?x="+ID);
 				 }			  
 			  },
 			  error: function(xhr, status, errorThrown) 
@@ -1314,8 +1315,7 @@ $("#title").html("Add Project");
 			 document.getElementById('ref').style.visibility = 'visible';
 			 document.getElementById('save').style.visibility = 'visible';
 			 document.getElementById('sav1').style.visibility = 'visible';
-			 alert();
-			 window.history.replaceState({}, null, "google.com");//"index.php?x="+ID
+			 window.history.replaceState(null, null, "index.php?x="+ID);
 			 
 	});
 	
