@@ -1261,6 +1261,7 @@ $("#title").html("Add Project");
            }
         });
         
+        alert(2);
         $('#images1').fileinput('destroy');
 		        $("#images1").fileinput({
 		        	
@@ -1279,8 +1280,8 @@ $("#title").html("Add Project");
             };
            }
         });
-		        alert();
-				  	 window.history.replaceState({}, null, "/index.php?x="+ID);
+		        alert(123);
+				  	 window.history.replaceState(null, null, "/index.php?x="+ID);
 				 }			  
 			  },
 			  error: function(xhr, status, errorThrown) 
