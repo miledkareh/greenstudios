@@ -1314,7 +1314,8 @@ $("#title").html("Add Project");
 			 document.getElementById('ref').style.visibility = 'visible';
 			 document.getElementById('save').style.visibility = 'visible';
 			 document.getElementById('sav1').style.visibility = 'visible';
-			 window.history.replaceState(null, null, "google.com");//"index.php?x="+ID
+			 alert();
+			 window.history.replaceState({}, null, "google.com");//"index.php?x="+ID
 			 
 	});
 	
