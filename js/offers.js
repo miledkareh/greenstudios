@@ -1211,6 +1211,7 @@ document.getElementById("clblalert").style.visibility='hidden';
 
 // ADD User
 $(document).on('click',"[id^='Add']",function(){
+	alert();
 $("#title").html("Add Project");
 			ID=0;
 			$('#image1').attr('src','');
@@ -1227,6 +1228,7 @@ $("#title").html("Add Project");
 			$('#image12').attr('src','');
 			$("#tableattachment").empty();
 			$('#status').val('INQUIRIES');
+			alert(11);
 			 $.ajax({
 			
 			  type: 'GET',
