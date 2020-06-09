@@ -9,7 +9,7 @@ if(isset($_GET["id"])){
 	if($action==1)
 	$sql="select * from plantpot where serial=$serial";
 	else if ($action==2)
-	$sql="select *,".$_SESSION['ViewQuantity']." as ViewQuantity from plantpot where plantid=$serial order by country asc,type asc,dat asc";
+	$sql="select *,".$_SESSION['ViewQuantity']." as ViewQuantity from plantpot where plantid=$serial order by country asc,type asc,dat asc,size asc";
 
 
 	else if ($action==3)

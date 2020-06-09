@@ -385,10 +385,13 @@ function populatePlantPot(data)
 			diff_tray=0;
 			lastqty_tray=0;
 			country=0;
+			size=0;
 		   $.each(data, function(index, row) {
 
-if(index==0)
+if(index==0){
 	country=row.country;
+	size=row.size;
+}
 
 				item = "<tr id='tr_"+row.serial+"'>";
                 item+=   "<td>"+row.type+"</td>";
@@ -396,7 +399,16 @@ if(index==0)
 				item+=   "<td>"+row.size+"</td>";
 				item+=   "<td>"+row.dat+"</td>";
 				item+=   "<td>"+row.qty+"</td>";
+
 if(country!=row.country){
+	diff_pot=0;
+			lastqty_pot=0;
+
+			diff_tray=0;
+			lastqty_tray=0;
+}
+
+if(size!=row.size){
 	diff_pot=0;
 			lastqty_pot=0;
 
