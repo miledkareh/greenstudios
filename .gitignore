@@ -1,2 +1,4 @@
 
 bower_components/*
+ws/DAL.class.php
+pages/configdb.php
