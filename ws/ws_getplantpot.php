@@ -10,7 +10,8 @@ if(isset($_GET["id"])){
 	$sql="select * from plantpot where serial=$serial";
 	else if ($action==2)
 	$sql="select *,".$_SESSION['ViewQuantity']." as ViewQuantity from plantpot where plantid=$serial order by country asc,type asc,dat asc,size asc";
-
+   
+   
 
 	else if ($action==3)
 	$sql="select *,(select description from taskstatus where serial=taskfollowup.status) as statusN,(select Fullname from users where serial=taskfollowup.userid) as userN from taskfollowup where taskid=$serial";
