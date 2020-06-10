@@ -159,7 +159,7 @@ while($x = mysqli_fetch_array($results)){?>
                                         <td><?php echo($x["User"]);?></td>
 										  <td><?php echo($x["Notes"]);?></td>
 										  <td><?php echo($x["checkindate"]);?></td>
-										   <td><?php if($x["Employees"]!=''){echo( count(split(',',$x["Employees"])));} else{echo('0'); }?></td>
+										   <td><?php if($x["Employees"]!=''){echo( count(explode(',',$x["Employees"])));} else{echo('0'); }?></td>
 										    <td><a href="./pendingattachments.php?x=<?php echo($x["SERIAL"]);?>&y=<?php echo($_GET['x']);?>&z=0" ><?php echo($x["Attachs"]);?></a></td>
                                         <td><?php 
                                         $i=0;
