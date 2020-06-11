@@ -34,7 +34,7 @@ $data2=$db->getData($qql);
 	$mail->Host = 'smtps.energybridge.net';
 	$mail->Port       = 25;
 	$mail->SMTPSecure = '';
-	$mail->SMTPAuth   = false;
+	$mail->SMTPAuth   = true;
 	$mail->Username = 'greenstudios\kmanja';
 	$mail->Password = 'K@REN2018';
 
@@ -693,8 +693,7 @@ try {
 	echo 0; //Pretty error messages from PHPMailer
   } catch (Exception $e) {
 	
-	echo 0;
-	var_dump($e); //Boring error messages from anything else!
+	echo 0; //Boring error messages from anything else!
   }
 
 
