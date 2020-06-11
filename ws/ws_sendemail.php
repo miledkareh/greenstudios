@@ -8,10 +8,10 @@ header('Access-Control-Allow-Origin: *');
 	$checkindate=date('Y-m-d');
 		   require '../PHPMailer/PHPMailerAutoload.php';
 		 
-	$description=$_POST['description'];
-	$subject=$_POST['subject'];
-	$email=$_POST['email'];
-	$id=$_POST['id'];
+	$description=$_GET['description'];
+	$subject=$_GET['subject'];
+	$email=$_GET['email'];
+	$id=$_GET['id'];
 	//$description=$description."\n http://mx1.greenstudios.net:8181/greenstudios/pages/Maintenances/Transaction.php?x=".$id;
 	$sql="select 
 	c.email as email from checkin as ch,
@@ -183,8 +183,8 @@ $data2=$db->getData($qql);
 	------------------------------------------------------------------------------------------------------------------------------------------------------
 	------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------',270);
 		include('../pages/configdb.php');
-		$query = "Select * from genpar where country in (select country from offers where serial in (select offerid from maintenances where serial in (select maintenanceid from maintenancedetails where serial in (select visit from checkin where serial=".$_POST['id'].")))) limit 1";
-			//echo($_POST["to"]);
+		$query = "Select * from genpar where country in (select country from offers where serial in (select offerid from maintenances where serial in (select maintenanceid from maintenancedetails where serial in (select visit from checkin where serial=".$_GET['id'].")))) limit 1";
+			//echo($_GET["to"]);
 		 $results = mysqli_query($dbhandle,$query)  or die(mysqli_error());
 		$data = array();
 		if($x = mysqli_fetch_array($results)){
@@ -273,8 +273,8 @@ $data2=$db->getData($qql);
 	function Footer()
 	{
 		include('../pages/configdb.php');
-		 $query = "Select dat from offers where Serial=".$_POST['id'];
-			//echo($_POST["to"]);
+		 $query = "Select dat from offers where Serial=".$_GET['id'];
+			//echo($_GET["to"]);
 		 $results = mysqli_query($dbhandle,$query)  or die(mysqli_error());
 		$data = array();
 		while($x = mysqli_fetch_array($results)){
@@ -346,8 +346,8 @@ $data2=$db->getData($qql);
 		TIMEDIFF(checkoutdate, checkindate) as time,
 		(select work from maintenancedetails where serial= checkin.visit) as Work
 		 from checkin 
-		where serial=".$_POST['id'];
-			//echo($_POST["to"]);
+		where serial=".$_GET['id'];
+			//echo($_GET["to"]);
 			
 		 $results = mysqli_query($dbhandle,$query)  or die(mysqli_error());
 		// echo $query;
@@ -547,14 +547,14 @@ $data2=$db->getData($qql);
 			$this->Ln(5);
 		}
 
-		if($_POST['gsnote']!=''){
+		if($_GET['gsnote']!=''){
 	$this->SetTextColor(0,0,0);
 	  $this->Cell(5,5,"",0,'L',0);
 		$this->MultiCell(23,5,"GS Feedback",0,'L',0);
 		$this->Ln(-5);
 		$this->Cell(30,5,"",0,'L',0);
 		$this->SetTextColor(69,68,68);
-		$this->MultiCell(55,5,$_POST['gsnote'],0,'L',0);
+		$this->MultiCell(55,5,$_GET['gsnote'],0,'L',0);
 			$this->Ln(5);
 		}
 		
@@ -567,7 +567,7 @@ $data2=$db->getData($qql);
 	$this->Cell(90,20,"",0,0,'L');
 	 $xx=$this->GetX();
 		  $yy=$this->GetY();
-	$this->Image('../att/Signature.jpg',$xx,$yy+3,50,50);
+//	$this->Image('../att/Signature.jpg',$xx,$yy+3,50,50);
 	
 	
 		 $query = "select * from visitattachment where visitid =".$x['visit'];
@@ -659,8 +659,8 @@ if($nbb!=$i){
 	$date= date('Y-m-d') ;
 	include('../pages/configdb.php');
 	$query = "Select * from checkin 
-		where serial=".$_POST['id'];
-			//echo($_POST["to"]);
+		where serial=".$_GET['id'];
+			//echo($_GET["to"]);
 			
 		 $results = mysqli_query($dbhandle,$query)  or die(mysqli_error());
 		// echo $query;
@@ -679,6 +679,7 @@ try {
 	if(!$mail->Send()) {
 	
 		echo $msg= 'Message could not be sent.';
+		 echo 'Mailer Error: ' . $mail->ErrorInfo;
 		echo 0;
 		exit;
 	 }
