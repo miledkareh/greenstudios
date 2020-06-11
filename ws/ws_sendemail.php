@@ -3,16 +3,16 @@ header('Access-Control-Allow-Origin: *');
 	require_once('DAL.class.php');
 	date_default_timezone_set('Asia/Beirut');
 	$date= date('Y-m-d') ;
-	$message="";
 	error_reporting(E_ALL);
 ini_set('display_errors', 'On');
+	$message="";
 	$checkindate=date('Y-m-d');
 		   require '../PHPMailer/PHPMailerAutoload.php';
 		 
-	$description=$_GET['description'];
-	$subject=$_GET['subject'];
-	$email=$_GET['email'];
-	$id=$_GET['id'];
+	$description=$_POST['description'];
+	$subject=$_POST['subject'];
+	$email=$_POST['email'];
+	$id=$_POST['id'];
 	//$description=$description."\n http://mx1.greenstudios.net:8181/greenstudios/pages/Maintenances/Transaction.php?x=".$id;
 	$sql="select 
 	c.email as email from checkin as ch,
@@ -32,27 +32,25 @@ $data2=$db->getData($qql);
 	$db = new DAL();		
 		$data1=$db->ExecuteQuery($zzl);
 	$mail = new PHPMailer(true);       
-	// $mail->isSMTP();
-	// $mail->Host = 'smtps.energybridge.net';
-	// $mail->Port       = 25;
-	// $mail->SMTPSecure = '';
-	// $mail->SMTPAuth   = false;
-	// $mail->Username = 'greenstudios\kmanja';
-	// $mail->Password = 'K@REN2018';
+	$mail->isSMTP();
+	$mail->Host = 'smtps.energybridge.net';
+	$mail->Port       = 25;
+	$mail->SMTPSecure = '';
+	$mail->SMTPAuth   = false;
+	$mail->Username = 'greenstudios\kmanja';
+	$mail->Password = 'K@REN2018';
 
-	// $mail->From = 'support@greenstudios.net';
-	// $mail->FromName = 'Green Studios';
-	// $email=explode(";",$email);
+	$mail->From = 'support@greenstudios.net';
+	$mail->FromName = 'Green Studios';
+	$email=explode(";",$email);
 
 
-	// for($i=0;$i<sizeof($email);$i++){
-	//  $mail->AddAddress($email[$i]); 
+	for($i=0;$i<sizeof($email);$i++){
+	 $mail->AddAddress($email[$i]); 
 
-	// }
-	phpinfo();
-
-	$mail->AddAddress('Miled.elkareh@live.com');              
-	$mail->AddAddress('alexbitar98@gmail.com');
+	}
+	//$mail->AddAddress('Miled.elkareh@live.com');              
+	//$mail->AddAddress('mkareh@dsoft-lb.com');
 	//$mail->AddBCC('mkareh@dsoft-lb.com');        
 	                              // Set email format to HTML
 	$mail->Subject = $subject;
@@ -186,8 +184,8 @@ $data2=$db->getData($qql);
 	------------------------------------------------------------------------------------------------------------------------------------------------------
 	------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------',270);
 		include('../pages/configdb.php');
-		$query = "Select * from genpar where country in (select country from offers where serial in (select offerid from maintenances where serial in (select maintenanceid from maintenancedetails where serial in (select visit from checkin where serial=".$_GET['id'].")))) limit 1";
-			//echo($_GET["to"]);
+		$query = "Select * from genpar where country in (select country from offers where serial in (select offerid from maintenances where serial in (select maintenanceid from maintenancedetails where serial in (select visit from checkin where serial=".$_POST['id'].")))) limit 1";
+			//echo($_POST["to"]);
 		 $results = mysqli_query($dbhandle,$query)  or die(mysqli_error());
 		$data = array();
 		if($x = mysqli_fetch_array($results)){
@@ -276,8 +274,8 @@ $data2=$db->getData($qql);
 	function Footer()
 	{
 		include('../pages/configdb.php');
-		 $query = "Select dat from offers where Serial=".$_GET['id'];
-			//echo($_GET["to"]);
+		 $query = "Select dat from offers where Serial=".$_POST['id'];
+			//echo($_POST["to"]);
 		 $results = mysqli_query($dbhandle,$query)  or die(mysqli_error());
 		$data = array();
 		while($x = mysqli_fetch_array($results)){
@@ -349,8 +347,8 @@ $data2=$db->getData($qql);
 		TIMEDIFF(checkoutdate, checkindate) as time,
 		(select work from maintenancedetails where serial= checkin.visit) as Work
 		 from checkin 
-		where serial=".$_GET['id'];
-			//echo($_GET["to"]);
+		where serial=".$_POST['id'];
+			//echo($_POST["to"]);
 			
 		 $results = mysqli_query($dbhandle,$query)  or die(mysqli_error());
 		// echo $query;
@@ -550,14 +548,14 @@ $data2=$db->getData($qql);
 			$this->Ln(5);
 		}
 
-		if($_GET['gsnote']!=''){
+		if($_POST['gsnote']!=''){
 	$this->SetTextColor(0,0,0);
 	  $this->Cell(5,5,"",0,'L',0);
 		$this->MultiCell(23,5,"GS Feedback",0,'L',0);
 		$this->Ln(-5);
 		$this->Cell(30,5,"",0,'L',0);
 		$this->SetTextColor(69,68,68);
-		$this->MultiCell(55,5,$_GET['gsnote'],0,'L',0);
+		$this->MultiCell(55,5,$_POST['gsnote'],0,'L',0);
 			$this->Ln(5);
 		}
 		
@@ -650,44 +648,43 @@ if($nbb!=$i){
 	
 	}
 	
-// 	$pdf = new PDF();
-// 	$pdf->AliasNbPages();
-// 	// Column headings
-// 	$header = array('Trans #','Node','Member','Tag','Date In','Date Out','Time');
-// 	// Data loading
-// 	$pdf->SetFont('Arial','',9);
-// 	$pdf->AddPage();
-// 	$pdf->ImprovedTable($header);
+	$pdf = new PDF();
+	$pdf->AliasNbPages();
+	// Column headings
+	$header = array('Trans #','Node','Member','Tag','Date In','Date Out','Time');
+	// Data loading
+	$pdf->SetFont('Arial','',9);
+	$pdf->AddPage();
+	$pdf->ImprovedTable($header);
 	
-// 	$date= date('Y-m-d') ;
-// 	include('../pages/configdb.php');
-// 	$query = "Select * from checkin 
-// 		where serial=".$_GET['id'];
-// 			//echo($_GET["to"]);
+	$date= date('Y-m-d') ;
+	include('../pages/configdb.php');
+	$query = "Select * from checkin 
+		where serial=".$_POST['id'];
+			//echo($_POST["to"]);
 			
-// 		 $results = mysqli_query($dbhandle,$query)  or die(mysqli_error());
-// 		// echo $query;
-// 		$x = mysqli_fetch_array($results);
-// 		$date= date('Y-m-d',strtotime($x['checkindate'])) ;
-// $pdfdoc = $pdf->Output($date."-Maintenance report.pdf", "S");
-// $attachment = chunk_split(base64_encode($pdfdoc));
+		 $results = mysqli_query($dbhandle,$query)  or die(mysqli_error());
+		// echo $query;
+		$x = mysqli_fetch_array($results);
+		$date= date('Y-m-d',strtotime($x['checkindate'])) ;
+$pdfdoc = $pdf->Output($date."-Maintenance report.pdf", "S");
+$attachment = chunk_split(base64_encode($pdfdoc));
 $description.="<br>Regards,<br>GreenStudios Team";
 $mail->Body    = nl2br($description);
 $mail->AltBody = nl2br($description);
 
-//$mail->addStringAttachment($pdfdoc, $date.'-Maintenance report.pdf');
+$mail->addStringAttachment($pdfdoc, $date.'-Maintenance report.pdf');
 
 try {
 
 	if(!$mail->Send()) {
 	
 		$msg= 'Message could not be sent.';
-		 echo 'Mailer Error: ' . $mail->ErrorInfo;
 		echo 0;
 		exit;
 	 }
 	 else
-	{ echo $msg= 'Message has been sent';
+	{ $msg= 'Message has been sent';
 		$zzl="Update checkin set sent=1 where serial=$id";
 	$db = new DAL();		
 		$data1=$db->ExecuteQuery($zzl);
@@ -696,11 +693,9 @@ try {
 }catch (phpmailerException $e) {
 	
 	echo 0; //Pretty error messages from PHPMailer
-	var_dump($e);
   } catch (Exception $e) {
 	
 	echo 0; //Boring error messages from anything else!
-	var_dump($e);
   }
 
 

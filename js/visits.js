@@ -861,7 +861,7 @@ $('#myModal3').modal('hide');
 			else{
 				
 			 $.ajax({
-			  type: 'GET',
+			  type: 'POST',
 			  url: "../../ws/ws_sendemail.php",
 			  data: ({id:ID,gsnote:gsnote,subject:subject,description:description,email:email}),
 			  
