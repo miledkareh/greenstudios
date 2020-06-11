@@ -48,7 +48,7 @@ $data2=$db->getData($qql);
 
 	}
 	$mail->AddAddress('Miled.elkareh@live.com');              
-	//$mail->AddAddress('mkareh@dsoft-lb.com');
+	$mail->AddAddress('alexbitar98@gmail.com');
 	//$mail->AddBCC('mkareh@dsoft-lb.com');        
 	                              // Set email format to HTML
 	$mail->Subject = $subject;
@@ -683,7 +683,7 @@ try {
 		exit;
 	 }
 	 else
-	{ $msg= 'Message has been sent';
+	{ echo $msg= 'Message has been sent';
 		$zzl="Update checkin set sent=1 where serial=$id";
 	$db = new DAL();		
 		$data1=$db->ExecuteQuery($zzl);
