@@ -694,6 +694,7 @@ try {
 	
 	echo 0; //Pretty error messages from PHPMailer
 	echo 'eror1';
+	var_dump($e);
   } catch (Exception $e) {
 	
 	echo 'eror2';
