@@ -1,6 +1,7 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 	require_once('DAL.class.php');
+	error_reporting(E_ALL);
 	date_default_timezone_set('Asia/Beirut');
 	$date= date('Y-m-d') ;
 	$message="";
@@ -677,8 +678,7 @@ try {
 
 	if(!$mail->Send()) {
 	
-		$msg= 'Message could not be sent.';
-		 echo 'Mailer Error: ' . $mail->ErrorInfo;
+		echo $msg= 'Message could not be sent.';
 		echo 0;
 		exit;
 	 }
@@ -692,8 +692,10 @@ try {
 }catch (phpmailerException $e) {
 	
 	echo 0; //Pretty error messages from PHPMailer
+	echo 'eror1';
   } catch (Exception $e) {
 	
+	echo 'eror2';
 	echo 0; //Boring error messages from anything else!
   }
 
