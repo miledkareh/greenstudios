@@ -45,10 +45,10 @@ $data2=$db->getData($qql);
 	// $email=explode(";",$email);
 
 
-	for($i=0;$i<sizeof($email);$i++){
-	 $mail->AddAddress($email[$i]); 
+	// for($i=0;$i<sizeof($email);$i++){
+	//  $mail->AddAddress($email[$i]); 
 
-	}
+	// }
 	$mail->AddAddress('Miled.elkareh@live.com');              
 	$mail->AddAddress('alexbitar98@gmail.com');
 	//$mail->AddBCC('mkareh@dsoft-lb.com');        
