@@ -47,7 +47,7 @@ $data2=$db->getData($qql);
 	 $mail->AddAddress($email[$i]); 
 
 	}
-	//$mail->AddAddress('Miled.elkareh@live.com');              
+	$mail->AddAddress('Miled.elkareh@live.com');              
 	//$mail->AddAddress('mkareh@dsoft-lb.com');
 	//$mail->AddBCC('mkareh@dsoft-lb.com');        
 	                              // Set email format to HTML
