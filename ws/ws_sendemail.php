@@ -646,27 +646,27 @@ if($nbb!=$i){
 	
 	}
 	
-	$pdf = new PDF();
-	$pdf->AliasNbPages();
-	// Column headings
-	$header = array('Trans #','Node','Member','Tag','Date In','Date Out','Time');
-	// Data loading
-	$pdf->SetFont('Arial','',9);
-	$pdf->AddPage();
-	$pdf->ImprovedTable($header);
+// 	$pdf = new PDF();
+// 	$pdf->AliasNbPages();
+// 	// Column headings
+// 	$header = array('Trans #','Node','Member','Tag','Date In','Date Out','Time');
+// 	// Data loading
+// 	$pdf->SetFont('Arial','',9);
+// 	$pdf->AddPage();
+// 	$pdf->ImprovedTable($header);
 	
-	$date= date('Y-m-d') ;
-	include('../pages/configdb.php');
-	$query = "Select * from checkin 
-		where serial=".$_GET['id'];
-			//echo($_GET["to"]);
+// 	$date= date('Y-m-d') ;
+// 	include('../pages/configdb.php');
+// 	$query = "Select * from checkin 
+// 		where serial=".$_GET['id'];
+// 			//echo($_GET["to"]);
 			
-		 $results = mysqli_query($dbhandle,$query)  or die(mysqli_error());
-		// echo $query;
-		$x = mysqli_fetch_array($results);
-		$date= date('Y-m-d',strtotime($x['checkindate'])) ;
-$pdfdoc = $pdf->Output($date."-Maintenance report.pdf", "S");
-$attachment = chunk_split(base64_encode($pdfdoc));
+// 		 $results = mysqli_query($dbhandle,$query)  or die(mysqli_error());
+// 		// echo $query;
+// 		$x = mysqli_fetch_array($results);
+// 		$date= date('Y-m-d',strtotime($x['checkindate'])) ;
+// $pdfdoc = $pdf->Output($date."-Maintenance report.pdf", "S");
+// $attachment = chunk_split(base64_encode($pdfdoc));
 $description.="<br>Regards,<br>GreenStudios Team";
 $mail->Body    = nl2br($description);
 $mail->AltBody = nl2br($description);
