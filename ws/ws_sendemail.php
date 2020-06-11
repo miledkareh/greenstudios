@@ -681,7 +681,7 @@ try {
 		echo $msg= 'Message could not be sent.';
 		 echo 'Mailer Error: ' . $mail->ErrorInfo;
 
-		 var_dump($mail);
+		 
 		echo 0;
 		exit;
 	 }
