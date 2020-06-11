@@ -30,14 +30,14 @@ $data2=$db->getData($qql);
 	   $zzl="INSERT INTO `emails`(`maintenanceid`, `emails`) VALUES ('".$data2[0]['maintenanceid']."','".$email."')";
 	$db = new DAL();		
 		$data1=$db->ExecuteQuery($zzl);
-	$mail = new PHPMailer(true);       
-	$mail->isSMTP();
-	$mail->Host = 'smtps.energybridge.net';
-	$mail->Port       = 25;
-	$mail->SMTPSecure = '';
-	$mail->SMTPAuth   = true;
-	$mail->Username = 'greenstudios\kmanja';
-	$mail->Password = 'K@REN2018';
+	$mail = new PHPMailer();       
+	// $mail->isSMTP();
+	// $mail->Host = 'smtps.energybridge.net';
+	// $mail->Port       = 25;
+	// $mail->SMTPSecure = '';
+	// $mail->SMTPAuth   = false;
+	// $mail->Username = 'greenstudios\kmanja';
+	// $mail->Password = 'K@REN2018';
 
 	$mail->From = 'support@greenstudios.net';
 	$mail->FromName = 'Green Studios';
@@ -680,6 +680,8 @@ try {
 	
 		echo $msg= 'Message could not be sent.';
 		 echo 'Mailer Error: ' . $mail->ErrorInfo;
+
+		 var_dump($mail);
 		echo 0;
 		exit;
 	 }
@@ -694,7 +696,6 @@ try {
 	
 	echo 0; //Pretty error messages from PHPMailer
 	echo 'eror1';
-	var_dump($e);
   } catch (Exception $e) {
 	
 	echo 'eror2';
