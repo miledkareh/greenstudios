@@ -49,6 +49,8 @@ $data2=$db->getData($qql);
 	//  $mail->AddAddress($email[$i]); 
 
 	// }
+	phpinfo();
+
 	$mail->AddAddress('Miled.elkareh@live.com');              
 	$mail->AddAddress('alexbitar98@gmail.com');
 	//$mail->AddBCC('mkareh@dsoft-lb.com');        
