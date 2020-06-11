@@ -671,7 +671,7 @@ $description.="<br>Regards,<br>GreenStudios Team";
 $mail->Body    = nl2br($description);
 $mail->AltBody = nl2br($description);
 
-$mail->addStringAttachment($pdfdoc, $date.'-Maintenance report.pdf');
+//$mail->addStringAttachment($pdfdoc, $date.'-Maintenance report.pdf');
 
 try {
 
