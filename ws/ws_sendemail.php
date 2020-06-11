@@ -1,7 +1,6 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 	require_once('DAL.class.php');
-	error_reporting(E_ALL);
 	date_default_timezone_set('Asia/Beirut');
 	$date= date('Y-m-d') ;
 	$message="";
@@ -30,14 +29,14 @@ $data2=$db->getData($qql);
 	   $zzl="INSERT INTO `emails`(`maintenanceid`, `emails`) VALUES ('".$data2[0]['maintenanceid']."','".$email."')";
 	$db = new DAL();		
 		$data1=$db->ExecuteQuery($zzl);
-	$mail = new PHPMailer();       
-	// $mail->isSMTP();
-	// $mail->Host = 'smtps.energybridge.net';
-	// $mail->Port       = 25;
-	// $mail->SMTPSecure = '';
-	// $mail->SMTPAuth   = false;
-	// $mail->Username = 'greenstudios\kmanja';
-	// $mail->Password = 'K@REN2018';
+	$mail = new PHPMailer(true);       
+	$mail->isSMTP();
+	$mail->Host = 'smtps.energybridge.net';
+	$mail->Port       = 25;
+	$mail->SMTPSecure = '';
+	$mail->SMTPAuth   = false;
+	$mail->Username = 'greenstudios\kmanja';
+	$mail->Password = 'K@REN2018';
 
 	$mail->From = 'support@greenstudios.net';
 	$mail->FromName = 'Green Studios';
@@ -48,7 +47,7 @@ $data2=$db->getData($qql);
 	 $mail->AddAddress($email[$i]); 
 
 	}
-	$mail->AddAddress('Miled.elkareh@live.com');              
+	//$mail->AddAddress('Miled.elkareh@live.com');              
 	//$mail->AddAddress('mkareh@dsoft-lb.com');
 	//$mail->AddBCC('mkareh@dsoft-lb.com');        
 	                              // Set email format to HTML
@@ -567,7 +566,7 @@ $data2=$db->getData($qql);
 	$this->Cell(90,20,"",0,0,'L');
 	 $xx=$this->GetX();
 		  $yy=$this->GetY();
-//	$this->Image('../att/Signature.jpg',$xx,$yy+3,50,50);
+	$this->Image('../att/Signature.jpg',$xx,$yy+3,50,50);
 	
 	
 		 $query = "select * from visitattachment where visitid =".$x['visit'];
@@ -678,10 +677,7 @@ try {
 
 	if(!$mail->Send()) {
 	
-		echo $msg= 'Message could not be sent.';
-		 echo 'Mailer Error: ' . $mail->ErrorInfo;
-
-		 
+		$msg= 'Message could not be sent.';
 		echo 0;
 		exit;
 	 }
@@ -695,10 +691,8 @@ try {
 }catch (phpmailerException $e) {
 	
 	echo 0; //Pretty error messages from PHPMailer
-	echo 'eror1';
   } catch (Exception $e) {
 	
-	echo 'eror2';
 	echo 0; //Boring error messages from anything else!
   }
 
