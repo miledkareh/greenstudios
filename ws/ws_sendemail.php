@@ -29,7 +29,7 @@ $data2=$db->getData($qql);
 	   $zzl="INSERT INTO `emails`(`maintenanceid`, `emails`) VALUES ('".$data2[0]['maintenanceid']."','".$email."')";
 	$db = new DAL();		
 		$data1=$db->ExecuteQuery($zzl);
-	$mail = new PHPMailer();       
+	$mail = new PHPMailer(true);       
 	// $mail->isSMTP();
 	// $mail->Host = 'smtps.energybridge.net';
 	// $mail->Port       = 25;
