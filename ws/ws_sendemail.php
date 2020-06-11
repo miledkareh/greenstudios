@@ -673,28 +673,29 @@ $mail->AltBody = nl2br($description);
 
 $mail->addStringAttachment($pdfdoc, $date.'-Maintenance report.pdf');
 
-try {
+echo 1;
+// try {
 
-	if(!$mail->Send()) {
+// 	if(!$mail->Send()) {
 	
-		$msg= 'Message could not be sent.';
-		echo 0;
-		exit;
-	 }
-	 else
-	{ $msg= 'Message has been sent';
-		$zzl="Update checkin set sent=1 where serial=$id";
-	$db = new DAL();		
-		$data1=$db->ExecuteQuery($zzl);
-	 echo 2;}
+// 		$msg= 'Message could not be sent.';
+// 		echo 0;
+// 		exit;
+// 	 }
+// 	 else
+// 	{ $msg= 'Message has been sent';
+// 		$zzl="Update checkin set sent=1 where serial=$id";
+// 	$db = new DAL();		
+// 		$data1=$db->ExecuteQuery($zzl);
+// 	 echo 2;}
 
-}catch (phpmailerException $e) {
+// }catch (phpmailerException $e) {
 	
-	echo 0; //Pretty error messages from PHPMailer
-  } catch (Exception $e) {
+// 	echo 0; //Pretty error messages from PHPMailer
+//   } catch (Exception $e) {
 	
-	echo 0; //Boring error messages from anything else!
-  }
+// 	echo 0; //Boring error messages from anything else!
+//   }
 
 
 	

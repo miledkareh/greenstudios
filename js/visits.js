@@ -883,8 +883,6 @@ $('#myModal3').modal('hide');
 			  error: function(xhr, status, errorThrown) 
 			  {
 
-
-				alert(status + errorThrown);
 			    alert("Email Sent !");
 				    location.reload();
 			  }

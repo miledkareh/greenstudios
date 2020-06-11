@@ -542,13 +542,17 @@ $prices=0;
 	(select ddescription from items where serial= invoicedetail.item)as ddescription,
 	(select description from items where serial=invoicedetail.item) as description,
 	(select price from items where serial=invoicedetail.item) as pricee,
+	if('".$y['currencyS']."'='KD',(select pricekd from items where serial=invoicedetail.item),if('".$y['currencyS']."'='AED',(select priceaed from items where serial=invoicedetail.item),(select price from items where serial=invoicedetail.item))) as pricee,
+(quantity* (if('".$y['currencyS']."'='KD',(select pricekd from items where serial=invoicedetail.item),if('".$y['currencyS']."'='AED',(select priceaed from items where serial=invoicedetail.item),(select price from items where serial=invoicedetail.item)))) )as totall,
+
+
 	(select unit from items where serial=invoicedetail.item) as unit from invoicedetail where invoice=".$_GET['y']." order by (select group1 from items where serial=invoicedetail.item) asc ,
 	(select code from items where serial=invoicedetail.item and CAST(code as UNSIGNED) <> 0) asc,(select description from items where serial=invoicedetail.item) asc";
 	 $rrr = mysqli_query($dbhandle,$ssl)  or die(mysqli_error());
 		while($rrx = mysqli_fetch_array($rrr)){
-			if($rrx['viewprices']==1){$prices+=$rrx['total'];
+			if($rrx['viewprices']==1){$prices+=$rrx['totall'];
 			if($rrx['group1']=="Freight"){
-				$firstfreighttot+=$rrx['total'];
+				$firstfreighttot+=$rrx['totall'];
 			}
 }
 		}
@@ -663,7 +667,7 @@ $firsttotal=   round(round($prices,2)  -((round($prices,2) -(round($firstfreight
 	$Freighttot=0;
 	$viewprices=0;
 	$this->Ln(8);
-     	$query = "Select *,(select country from offers where serial in (select project from invoicereport where serial=invoicedetail.invoice)) as country,
+      $query = "Select *,(select country from offers where serial in (select project from invoicereport where serial=invoicedetail.invoice)) as country,
 	(select description from itemsgroups where serial in (select group1 from items where serial=invoicedetail.item))as group1,
 	(select order2 from itemsgroups where serial in (select group1 from items where serial=invoicedetail.item))as group2 ,
 	(select price from items where serial=invoicedetail.item)as dimension,
@@ -672,7 +676,9 @@ $firsttotal=   round(round($prices,2)  -((round($prices,2) -(round($firstfreight
 	(select ccode from items where serial= invoicedetail.item)as ccode,
 	(select ddescription from items where serial= invoicedetail.item)as ddescription,
 	(select description from items where serial=invoicedetail.item) as description,
-	(select price from items where serial=invoicedetail.item) as pricee,
+		if('".$y['currencyS']."'='KD',(select pricekd from items where serial=invoicedetail.item),if('".$y['currencyS']."'='AED',(select priceaed from items where serial=invoicedetail.item),(select price from items where serial=invoicedetail.item))) as pricee,
+(quantity* (if('".$y['currencyS']."'='KD',(select pricekd from items where serial=invoicedetail.item),if('".$y['currencyS']."'='AED',(select priceaed from items where serial=invoicedetail.item),(select price from items where serial=invoicedetail.item)))) )as totall,
+
 	(select unit from items where serial=invoicedetail.item) as unit from invoicedetail where invoice=".$_GET['y']." order by group2 asc,viewprices DESC  ";
 
  // (select group1 from items where serial=invoicedetail.item) asc ,
@@ -719,14 +725,14 @@ $this->SetXY($xx+55,$yy-4);
 
 	   if($x["viewprices"]==1){
 	$this->Cell(20,5,number_format($x["pricee"], 2 , '.' , ',' ),0,0,'L');
-	$this->Cell(20,5,number_format($x["total"], 2 , '.' , ',' ),0,0,'L');
- if($group=="Freight"){  $Freighttot+=$x["total"];}
+	$this->Cell(20,5,number_format($x["totall"], 2 , '.' , ',' ),0,0,'L');
+ if($group=="Freight"){  $Freighttot+=$x["totall"];}
 	
 	}
 	else{
 		$this->Cell(20,5,number_format($x["pricee"], 2 , '.' , ',' ),0,0,'L');
 	//$this->Cell(20,5,number_format($x["total"], 2 , '.' , ',' ),0,0,'L');
-		$viewprices+=$x["total"];
+		$viewprices+=$x["totall"];
 	}
 	$this->Ln(5);
 	$this->Cell(20,16,'',0,0,'L');
