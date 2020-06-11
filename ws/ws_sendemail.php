@@ -1,6 +1,7 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 	require_once('DAL.class.php');
+	error_reporting(E_ALL);
 	date_default_timezone_set('Asia/Beirut');
 	$date= date('Y-m-d') ;
 	$message="";
@@ -673,7 +674,7 @@ $mail->AltBody = nl2br($description);
 
 $mail->addStringAttachment($pdfdoc, $date.'-Maintenance report.pdf');
 
-echo 1;
+echo 0;
 // try {
 
 // 	if(!$mail->Send()) {
