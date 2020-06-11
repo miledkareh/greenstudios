@@ -688,12 +688,11 @@ try {
 		$data1=$db->ExecuteQuery($zzl);
 	 echo 2;}
 
-}catch (phpmailerException $e) {
+} catch (Exception $e) {
 	
-	echo 0; //Pretty error messages from PHPMailer
-  } catch (Exception $e) {
-	
-	echo 0; //Boring error messages from anything else!
+	echo 0;
+	var_dump($e);
+	 //Boring error messages from anything else!
   }
 
 
