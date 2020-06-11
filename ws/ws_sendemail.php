@@ -33,23 +33,23 @@ $data2=$db->getData($qql);
 		$data1=$db->ExecuteQuery($zzl);
 	$mail = new PHPMailer(true);       
 	$mail->isSMTP();
-	$mail->Host = 'smtp.gmail.com';
-	$mail->Port       = 587;
+	$mail->Host = 'smtps.energybridge.net';
+	$mail->Port       = 25;
 	$mail->SMTPSecure = '';
 	$mail->SMTPAuth   = false;
-	$mail->Username = 'alexbitar98@gmail.com';
-	$mail->Password = 'A02286471022hateyou';
+	$mail->Username = 'greenstudios\kmanja';
+	$mail->Password = 'K@REN2018';
 
-	$mail->From = 'alexbitar98@gmail.com';
+	$mail->From = 'support@greenstudios.net';
 	$mail->FromName = 'Green Studios';
 	$email=explode(";",$email);
 
 
-	// for($i=0;$i<sizeof($email);$i++){
-	//  $mail->AddAddress($email[$i]); 
+	for($i=0;$i<sizeof($email);$i++){
+	 $mail->AddAddress($email[$i]); 
 
-	// }
-	$mail->AddAddress('Miled.elkareh@live.com');              
+	}
+	//$mail->AddAddress('Miled.elkareh@live.com');              
 	//$mail->AddAddress('mkareh@dsoft-lb.com');
 	//$mail->AddBCC('mkareh@dsoft-lb.com');        
 	                              // Set email format to HTML
