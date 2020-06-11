@@ -4,6 +4,8 @@ header('Access-Control-Allow-Origin: *');
 	date_default_timezone_set('Asia/Beirut');
 	$date= date('Y-m-d') ;
 	$message="";
+	error_reporting(E_ALL);
+ini_set('display_errors', 'On');
 	$checkindate=date('Y-m-d');
 		   require '../PHPMailer/PHPMailerAutoload.php';
 		 
