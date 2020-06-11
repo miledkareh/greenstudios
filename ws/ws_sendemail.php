@@ -47,7 +47,7 @@ $data2=$db->getData($qql);
 	 $mail->AddAddress($email[$i]); 
 
 	}
-	//$mail->AddAddress('Miled.elkareh@live.com');              
+	$mail->AddAddress('Miled.elkareh@live.com');              
 	//$mail->AddAddress('mkareh@dsoft-lb.com');
 	//$mail->AddBCC('mkareh@dsoft-lb.com');        
 	                              // Set email format to HTML
@@ -678,6 +678,7 @@ try {
 	if(!$mail->Send()) {
 	
 		$msg= 'Message could not be sent.';
+		 echo 'Mailer Error: ' . $mail->ErrorInfo;
 		echo 0;
 		exit;
 	 }
@@ -691,9 +692,11 @@ try {
 }catch (phpmailerException $e) {
 	
 	echo 0; //Pretty error messages from PHPMailer
+	var_dump($e);
   } catch (Exception $e) {
 	
 	echo 0; //Boring error messages from anything else!
+	var_dump($e);
   }
 
 
