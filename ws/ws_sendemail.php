@@ -29,18 +29,18 @@ $data2=$db->getData($qql);
 	   $zzl="INSERT INTO `emails`(`maintenanceid`, `emails`) VALUES ('".$data2[0]['maintenanceid']."','".$email."')";
 	$db = new DAL();		
 		$data1=$db->ExecuteQuery($zzl);
-	$mail = new PHPMailer(true);       
-	$mail->isSMTP();
-	$mail->Host = 'smtps.energybridge.net';
-	$mail->Port       = 25;
-	$mail->SMTPSecure = '';
-	$mail->SMTPAuth   = false;
-	$mail->Username = 'greenstudios\kmanja';
-	$mail->Password = 'K@REN2018';
+	$mail = new PHPMailer();       
+	// $mail->isSMTP();
+	// $mail->Host = 'smtps.energybridge.net';
+	// $mail->Port       = 25;
+	// $mail->SMTPSecure = '';
+	// $mail->SMTPAuth   = false;
+	// $mail->Username = 'greenstudios\kmanja';
+	// $mail->Password = 'K@REN2018';
 
-	$mail->From = 'support@greenstudios.net';
-	$mail->FromName = 'Green Studios';
-	$email=explode(";",$email);
+	// $mail->From = 'support@greenstudios.net';
+	// $mail->FromName = 'Green Studios';
+	// $email=explode(";",$email);
 
 
 	for($i=0;$i<sizeof($email);$i++){
