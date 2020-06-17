@@ -4,7 +4,7 @@ header('Access-Control-Allow-Origin: *');
 	date_default_timezone_set('Asia/Beirut');
 	$date= date('Y-m-d') ;
 	error_reporting(E_ALL);
-ini_set('display_errors', 'On');
+	ini_set('display_errors', 'On');
 	$message="";
 	$checkindate=date('Y-m-d');
 		   require '../PHPMailer/PHPMailerAutoload.php';
@@ -33,23 +33,23 @@ $data2=$db->getData($qql);
 		$data1=$db->ExecuteQuery($zzl);
 	$mail = new PHPMailer(true);       
 	$mail->isSMTP();
-	$mail->Host = 'smtps.energybridge.net';
-	$mail->Port       = 25;
-	$mail->SMTPSecure = '';
+	$mail->Host = 'smtp-relay.gmail.com';
+	$mail->Port       = 587;
+	//$mail->SMTPSecure = '';
 	$mail->SMTPAuth   = false;
-	$mail->Username = 'greenstudios\kmanja';
-	$mail->Password = 'K@REN2018';
+	//$mail->Username = 'greenstudios\kmanja';
+	//$mail->Password = 'K@REN2018';
 
 	$mail->From = 'support@greenstudios.net';
 	$mail->FromName = 'Green Studios';
-	$email=explode(";",$email);
+	// $email=explode(";",$email);
 
 
-	for($i=0;$i<sizeof($email);$i++){
-	 $mail->AddAddress($email[$i]); 
+	// for($i=0;$i<sizeof($email);$i++){
+	//  $mail->AddAddress($email[$i]); 
 
-	}
-	//$mail->AddAddress('Miled.elkareh@live.com');              
+	// }
+	$mail->AddAddress('alex_b_1998@hotmail.com');              
 	//$mail->AddAddress('mkareh@dsoft-lb.com');
 	//$mail->AddBCC('mkareh@dsoft-lb.com');        
 	                              // Set email format to HTML
