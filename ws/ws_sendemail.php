@@ -693,6 +693,7 @@ try {
 
 }catch (phpmailerException $e) {
 	echo 'phpmailerException';
+	var_dump($e);
 	echo 0; //Pretty error messages from PHPMailer
   } catch (Exception $e) {
 	echo 'catch';
