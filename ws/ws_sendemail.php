@@ -679,7 +679,7 @@ try {
 
 	if(!$mail->Send()) {
 	
-		$msg= 'Message could not be sent.';
+	echo $msg= 'Message could not be sent.';
 		echo 0;
 		exit;
 	 }
@@ -688,13 +688,14 @@ try {
 		$zzl="Update checkin set sent=1 where serial=$id";
 	$db = new DAL();		
 		$data1=$db->ExecuteQuery($zzl);
-	 echo 2;}
+	 echo 2;
+	}
 
 }catch (phpmailerException $e) {
-	
+	echo 'phpmailerException';
 	echo 0; //Pretty error messages from PHPMailer
   } catch (Exception $e) {
-	
+	echo 'catch';
 	echo 0; //Boring error messages from anything else!
   }
 
