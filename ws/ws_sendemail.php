@@ -41,8 +41,8 @@ $data2=$db->getData($qql);
 	//$mail->Password = 'K@REN2018';
 
 	//$mail->From = 'melhayek@greenstudios.net';
-	 $mail->setFrom('support@greenstudios.net', 'Mailer');
-     $mail->addReplyTo('melhayek@greenstudios.net', 'Support');
+	 $mail->setFrom('support@greenstudios.net');
+     $mail->addReplyTo('lkalpaklian@greenstudios.net', 'Lea Kalpaklian');
 
 	$mail->FromName = 'Green Studios';
 	// $email=explode(";",$email);
