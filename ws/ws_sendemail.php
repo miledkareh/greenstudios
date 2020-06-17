@@ -45,14 +45,14 @@ $data2=$db->getData($qql);
      $mail->addReplyTo('lkalpaklian@greenstudios.net', 'Lea Kalpaklian');
 
 	$mail->FromName = 'Green Studios';
-	// $email=explode(";",$email);
+	 $email=explode(";",$email);
 
 
-	// for($i=0;$i<sizeof($email);$i++){
-	//  $mail->AddAddress($email[$i]); 
+	for($i=0;$i<sizeof($email);$i++){
+	 $mail->AddAddress($email[$i]); 
 
-	// }
-	$mail->AddAddress('alex_b_1998@hotmail.com');              
+	}
+	//$mail->AddAddress('alex_b_1998@hotmail.com');              
 	//$mail->AddAddress('mkareh@dsoft-lb.com');
 	//$mail->AddBCC('mkareh@dsoft-lb.com');        
 	                              // Set email format to HTML
@@ -682,7 +682,7 @@ try {
 
 	if(!$mail->Send()) {
 	
-	echo $msg= 'Message could not be sent.';
+	  $msg= 'Message could not be sent.';
 		echo 0;
 		exit;
 	 }
@@ -695,11 +695,10 @@ try {
 	}
 
 }catch (phpmailerException $e) {
-	echo 'phpmailerException';
-	var_dump($e);
+	 
 	echo 0; //Pretty error messages from PHPMailer
   } catch (Exception $e) {
-	echo 'catch';
+	 
 	echo 0; //Boring error messages from anything else!
   }
 
