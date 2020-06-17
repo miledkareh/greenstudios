@@ -542,8 +542,7 @@ $prices=0;
 	(select ddescription from items where serial= invoicedetail.item)as ddescription,
 	(select description from items where serial=invoicedetail.item) as description,
 	(select price from items where serial=invoicedetail.item) as pricee,
-	if('".$y['currencyS']."'='KD',(select pricekd from items where serial=invoicedetail.item),if('".$y['currencyS']."'='AED',(select priceaed from items where serial=invoicedetail.item),(select price from items where serial=invoicedetail.item))) as pricee,
-(quantity* (if('".$y['currencyS']."'='KD',(select pricekd from items where serial=invoicedetail.item),if('".$y['currencyS']."'='AED',(select priceaed from items where serial=invoicedetail.item),(select price from items where serial=invoicedetail.item)))) )as totall,
+	(quantity* (select price from items where serial=invoicedetail.item) )as totall,
 
 
 	(select unit from items where serial=invoicedetail.item) as unit from invoicedetail where invoice=".$_GET['y']." order by (select group1 from items where serial=invoicedetail.item) asc ,
@@ -676,8 +675,8 @@ $firsttotal=   round(round($prices,2)  -((round($prices,2) -(round($firstfreight
 	(select ccode from items where serial= invoicedetail.item)as ccode,
 	(select ddescription from items where serial= invoicedetail.item)as ddescription,
 	(select description from items where serial=invoicedetail.item) as description,
-		if('".$y['currencyS']."'='KD',(select pricekd from items where serial=invoicedetail.item),if('".$y['currencyS']."'='AED',(select priceaed from items where serial=invoicedetail.item),(select price from items where serial=invoicedetail.item))) as pricee,
-(quantity* (if('".$y['currencyS']."'='KD',(select pricekd from items where serial=invoicedetail.item),if('".$y['currencyS']."'='AED',(select priceaed from items where serial=invoicedetail.item),(select price from items where serial=invoicedetail.item)))) )as totall,
+		 price as pricee,
+(quantity*price)as totall,
 
 	(select unit from items where serial=invoicedetail.item) as unit from invoicedetail where invoice=".$_GET['y']." order by group2 asc,viewprices DESC  ";
 
