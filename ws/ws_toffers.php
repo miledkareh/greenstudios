@@ -310,29 +310,29 @@ $valuecurrency=$_GET['valuecurrency'];
 		$data1=$db->ExecuteQuery($sql);
 
 
-$zql="select * from invoicedetail where invoice in (select serial from invoicereport where project='".$id."')";
-$db = new DAL();		
-$data_zql=$db->getdata($zql);
+// $zql="select * from invoicedetail where invoice in (select serial from invoicereport where project='".$id."')";
+// $db = new DAL();		
+// $data_zql=$db->getdata($zql);
 
-for ($k=0; $k < sizeof($data_zql); $k++) {
+// for ($k=0; $k < sizeof($data_zql); $k++) {
 
-if($currency=='3')
-	$zql1="select pricekd as pricee,(pricekd*".$data_zql[$k]['quantity'].")as tot from items where serial=(select item from invoicedetail where serial='".$data_zql[$k]['serial']."')" ;
-else if($currency=='4')
-	$zql1="select priceaed as pricee,(priceaed*".$data_zql[$k]['quantity'].")as tot from items where serial=(select item from invoicedetail where serial='".$data_zql[$k]['serial']."')" ;
-else 
-	$zql1="select priceusd as pricee,(priceusd*".$data_zql[$k]['quantity'].")as tot from items where serial=(select item from invoicedetail where serial='".$data_zql[$k]['serial']."')" ;
+// if($currency=='3')
+// 	$zql1="select pricekd as pricee,(pricekd*".$data_zql[$k]['quantity'].")as tot from items where serial=(select item from invoicedetail where serial='".$data_zql[$k]['serial']."')" ;
+// else if($currency=='4')
+// 	$zql1="select priceaed as pricee,(priceaed*".$data_zql[$k]['quantity'].")as tot from items where serial=(select item from invoicedetail where serial='".$data_zql[$k]['serial']."')" ;
+// else 
+// 	$zql1="select priceusd as pricee,(priceusd*".$data_zql[$k]['quantity'].")as tot from items where serial=(select item from invoicedetail where serial='".$data_zql[$k]['serial']."')" ;
 
-$db = new DAL();		
-$data_zql1=$db->getdata($zql1);
+// $db = new DAL();		
+// $data_zql1=$db->getdata($zql1);
 
 
 
-	  $zql2="update invoicedetail  set price='".$data_zql1[0]['pricee']."',total='".$data_zql1[0]['tot']."' where serial='".$data_zql[$k]['serial']."' ";
-	$db = new DAL();		
-$data_zql2=$db->ExecuteQuery($zql2);
+// 	  $zql2="update invoicedetail  set price='".$data_zql1[0]['pricee']."',total='".$data_zql1[0]['tot']."' where serial='".$data_zql[$k]['serial']."' ";
+// 	$db = new DAL();		
+// $data_zql2=$db->ExecuteQuery($zql2);
 
-}
+// }
 
 
 
