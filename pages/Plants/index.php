@@ -1050,7 +1050,7 @@ while($x = mysqli_fetch_array($results)){?>
         </div>
 
         <div class="modal-body" align="center">	
-		<label>Date</label><input class="form-control" type="date"   name="date" value="<?php echo date("Y-m-d"); ?>" id="date" style="width:100%;" >	
+		<label>Date</label><input class="form-control" type="date"   name="date"   id="date" style="width:100%;" >	
 	<label>Type</label><select name="class1" class="form-control" id="type" style="width: 100%;" >
 				 <option value="POT">POT</option>
 				<option value="Tray">Tray</option>	

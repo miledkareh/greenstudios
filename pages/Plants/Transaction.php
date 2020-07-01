@@ -191,6 +191,7 @@ function WordWrap(&$text, $maxwidth)
 function Footer()
 {
 	include('../configdb.php');
+    $this->Image('../../att/palette-legend.jpg',0,180,295);
 	
 	
 }

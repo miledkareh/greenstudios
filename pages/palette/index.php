@@ -133,7 +133,7 @@ while($x = mysqli_fetch_array($results)){?>
 
                                     <tr class="odd gradeX" >                                   	
                                         <td><?php echo($x["palettename"]);?></td>
-                                        <td><a target="_blank" href="../plants/Transaction.php?x=<?php echo $x['plants']; ?>">Palette</a></td>
+                                        <td><a target="_blank" href="../Plants/Transaction.php?x=<?php echo $x['plants']; ?>">Palette</a></td>
                                          
                                        <?php if($_SESSION['pallce']==1){?>
 <td class="center">
