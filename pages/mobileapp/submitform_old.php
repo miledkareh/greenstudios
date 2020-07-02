@@ -49,7 +49,7 @@ date_default_timezone_set("Asia/Beirut");
 
 	
  
-  $sql="UPDATE checkin SET  update1=1,checkout=1,checkoutdate='".date("Y-m-d h:i:s")."'  where visit=$ID";
+  $sql="UPDATE checkin SET  update1=1,checkout=1,checkoutdate='".date("Y-m-d H:i:s")."'  where visit=$ID";
       $result = mysqli_query($con,$sql);	
 
 

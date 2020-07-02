@@ -57,7 +57,7 @@ $GWINT=$arr[0];
 $clientid=$arr[1];
 $gwarea=$arr[2];
 $rgarea=$arr[3];
-  $sql="UPDATE checkin SET  update1=1,checkout=1,checkoutdate='".date("Y-m-d h:i:s")."',rate='3'  where visit=$ID";
+  $sql="UPDATE checkin SET  update1=1,checkout=1,checkoutdate='".date("Y-m-d H:i:s")."',rate='3'  where visit=$ID";
       $result = mysqli_query($con,$sql);	
 
 

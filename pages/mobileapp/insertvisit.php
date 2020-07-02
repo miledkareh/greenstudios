@@ -55,14 +55,14 @@ $file = basename($path, ".php");
 
  
    $sql="Insert into maintenancedetails (update1,userid,maintenanceid,employees,dat) values 
-                                       (1,'".$supid."','".$proid."','".$arr."','".date("Y-m-d h:i:s")."')";
+                                       (1,'".$supid."','".$proid."','".$arr."','".date("Y-m-d H:i:s")."')";
         $result = mysqli_query($con,$sql); 
 
  $visitID=mysqli_insert_id($con);
     
 
     
-      $sql="INSERT INTO `checkin`(`visit`, `checkindate`, `userid`, `checkin`, `update1`, `dat`) VALUES ('".mysqli_insert_id($con)."','".date("Y-m-d h:i:s")."','".$sess."',1,1,'".date("Y-m-d h:i:s")."')";
+      $sql="INSERT INTO `checkin`(`visit`, `checkindate`, `userid`, `checkin`, `update1`, `dat`) VALUES ('".mysqli_insert_id($con)."','".date("Y-m-d H:i:s")."','".$sess."',1,1,'".date("Y-m-d H:i:s")."')";
       $result = mysqli_query($con,$sql);
 
   
