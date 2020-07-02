@@ -4,8 +4,8 @@ header('Access-Control-Allow-Origin: *');
 	require_once('DAL.class.php');
 
 
-error_reporting(E_ALL);
-ini_set('display_errors', 'on');
+// error_reporting(E_ALL);
+// ini_set('display_errors', 'on');
 	$val=1;
 	
 	$action=$_GET["action"];
@@ -35,7 +35,7 @@ ini_set('display_errors', 'on');
 		$phours=$_GET["phours"];
 		$today=$_GET['today'];
 		$dat=$_GET['dat'];
-		echo $sql="Insert into customers (phours,dat,referral,update1,ccategory,fname,lname,userid,email,telephone,id,company,specialty,fn,activity,mobile,country,city,fax,project,offer,status,budget,area,category,notes,website,priority) 
+		  $sql="Insert into customers (phours,dat,referral,update1,ccategory,fname,lname,userid,email,telephone,id,company,specialty,fn,activity,mobile,country,city,fax,project,offer,status,budget,area,category,notes,website,priority) 
 		values ('$phours','$dat','$referral',1,'$category','$fname','$lname','".$_SESSION['UserSerial']."','$email','$tel',0,'$company','$specialty','','$title','$mobile','$country','$city','$fax','',0,'',0,0,'','$notes','$website','')";
 		$db = new DAL();		
 		$data=$db->ExecuteQuery($sql);
