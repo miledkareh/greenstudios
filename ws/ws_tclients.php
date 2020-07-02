@@ -35,10 +35,10 @@ ini_set('display_errors', 'on');
 		$phours=$_GET["phours"];
 		$today=$_GET['today'];
 		$dat=$_GET['dat'];
-		$sql="Insert into customers (phours,dat,referral,update1,ccategory,fname,lname,userid,email,telephone,id,company,specialty,fn,activity,mobile,country,city,fax,project,offer,status,budget,area,category,notes,website,priority) values ('$phours','$dat','$referral',1,$category,'$fname','$lname',".$_SESSION['UserSerial'].",'$email','$tel',0,'$company','$specialty','','$title','$mobile','$country','$city','$fax','',0,'',0,0,'','$notes','$website','')";
+	echo 	$sql="Insert into customers (phours,dat,referral,update1,ccategory,fname,lname,userid,email,telephone,id,company,specialty,fn,activity,mobile,country,city,fax,project,offer,status,budget,area,category,notes,website,priority) values ('$phours','$dat','$referral',1,$category,'$fname','$lname',".$_SESSION['UserSerial'].",'$email','$tel',0,'$company','$specialty','','$title','$mobile','$country','$city','$fax','',0,'',0,0,'','$notes','$website','')";
 		$db = new DAL();		
 		$data=$db->ExecuteQuery($sql);
-		$sql=" Insert into audit (description,tablename,tableserial,userid,dat) values ('New Client added','customers',$data,".$_SESSION['UserSerial'].",'$today')";
+	echo 	$sql=" Insert into audit (description,tablename,tableserial,userid,dat) values ('New Client added','customers',$data,".$_SESSION['UserSerial'].",'$today')";
 		$db = new DAL();		
 		$data1=$db->ExecuteQuery($sql);
 	}//request delete transaction
