@@ -3,6 +3,9 @@
 header('Access-Control-Allow-Origin: *');
 	require_once('DAL.class.php');
 
+
+error_reporting(E_ALL);
+ini_set('display_errors', 'on');
 	$val=1;
 	
 	$action=$_GET["action"];
