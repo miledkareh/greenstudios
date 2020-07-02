@@ -193,7 +193,7 @@ function Footer()
 	include('../configdb.php');
 
      if ( $this->PageNo() !== 1 ) {
-        $this->Image('../../att/palette-legend.jpg',0,180,295);
+       // $this->Image('../../att/palette-legend.jpg',0,180,295);
         }
    
 	
