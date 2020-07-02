@@ -55,15 +55,15 @@ myModall.modal-open {
 	}
 
 </style>
-<link rel="stylesheet" href="../date/themes/base/jquery.ui.all.css">
+<link rel="stylesheet" href="../Date/themes/base/jquery.ui.all.css">
 
-	<script src="../date/jquery-1.9.1.js"></script>
+	<script src="../Date/jquery-1.9.1.js"></script>
 	<script src="../../vendor/jquery/jquery.min.js"></script>
-	<script src="../date/ui/jquery.ui.core.js"></script>
+	<script src="../Date/ui/jquery.ui.core.js"></script>
 	
-	<script src="../date/ui/jquery.ui.widget.js"></script>
+	<script src="../Date/ui/jquery.ui.widget.js"></script>
 	
-	<script src="../date/ui/jquery.ui.datepicker.js"></script>
+	<script src="../Date/ui/jquery.ui.datepicker.js"></script>
 	
 	<script>
 	$(function() {
@@ -838,7 +838,7 @@ while($x = mysqli_fetch_array($results)){?>
     <script src="../../vendor/datatables/js/jquery.dataTables.min.js"></script>
     <script src="../../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
     <script src="../../vendor/datatables-responsive/dataTables.responsive.js"></script>
-    <script type="text/javascript" src="../../Datatables/FixedHeader-3.1.3/js/datatables.fixedHeader.min.js"></script>
+    <script type="text/javascript" src="../../Datatables/FixedHeader-3.1.3/js/dataTables.fixedHeader.min.js"></script>
 <script src="../../bower_components/dist/sweetalert2.all.min.js"></script>
     <!-- Custom Theme JavaScript -->
     <script src="../../dist/js/sb-admin-2.js"></script>
