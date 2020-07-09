@@ -53,7 +53,7 @@ header('Access-Control-Allow-Origin: *');
 	if($y = mysqli_fetch_array($result)){
 		 $amount = $amount* $y['ToAmount'] / $y['FromAmount'];
 	}
-		$sql=" UPDATE offers SET offervalue=".$x['stotal'].",valueusd=$amount where serial in (select project from invoicereport where serial=$invoice)";
+		  $sql=" UPDATE offers SET valuecurrency=".$x['stotal'].",valueusd=$amount,offervalue=$amount where serial in (select project from invoicereport where serial=$invoice)";
 		$db = new DAL();		
 		$data=$db->ExecuteQuery($sql);
 		}
@@ -78,7 +78,7 @@ header('Access-Control-Allow-Origin: *');
 	if($y = mysqli_fetch_array($result)){
 		 $amount = $amount* $y['ToAmount'] / $y['FromAmount'];
 	}
-		$sql=" UPDATE offers SET offervalue=".$x['stotal'].",valueusd=$amount  where serial in (select project from invoicereport where serial=$invoice)";
+		  $sql=" UPDATE offers SET valuecurrency=".$x['stotal'].",offervalue=$amount,valueusd=$amount  where serial in (select project from invoicereport where serial=$invoice)";
 		$db = new DAL();		
 		$data=$db->ExecuteQuery($sql);
 		}

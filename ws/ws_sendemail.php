@@ -24,7 +24,7 @@ header('Access-Control-Allow-Origin: *');
 $db = new DAL(); 
 $data=$db->getData($sql);
 
-$qql="select maintenanceid from maintenancedetails where serial in (select visit from checkin where serial='".$id."' )";
+$qql="select maintenanceid,(select country from offers where serial =(select offerid from maintenances where Serial =maintenancedetails.maintenanceid))as country from maintenancedetails where serial in (select visit from checkin where serial='".$id."' )";
 $db = new DAL();		
 $data2=$db->getData($qql);
 
@@ -41,7 +41,14 @@ $data2=$db->getData($qql);
 	//$mail->Password = 'K@REN2018';
 
 	//$mail->From = 'melhayek@greenstudios.net';
+
+
+	if($data2['country']=='Kuwait')
+$mail->setFrom('hellokuwait@greenstudios.ne');
+else
 	 $mail->setFrom('support@greenstudios.net');
+
+
      $mail->addReplyTo('lkalpaklian@greenstudios.net', 'Lea Kalpaklian');
 
 	$mail->FromName = 'Green Studios';

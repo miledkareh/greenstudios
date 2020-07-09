@@ -208,11 +208,57 @@ $(document).on('click',"[id^='Add']",function(){
 					document.getElementById("lblalert2").style.visibility='visible';	
 			else
 			{
+
+
 			pot=0;
-			$('#myModal2').modal('show');		//window.open("../pages/upload.php?x="+ document.getElementById("attachment").value,"_blank","width=0,height=0");
+			$('#myModal2').modal('show');
+			 
+					//window.open("../pages/upload.php?x="+ document.getElementById("attachment").value,"_blank","width=0,height=0");
 			}
 
 	});
+
+
+  $("#size").blur(function(){
+ 
+if(pot==0)//only get prices(of last time) on new 
+   getlastcost(document.getElementById("type").value,document.getElementById("country1").value,document.getElementById("size").value);
+  });
+
+function getlastcost(type,country,size){
+
+ 
+	$.ajax({
+			
+			  type: 'GET',
+			  url: "../../ws/ws_getlastplant.php",
+			  data: ({type:type,country:country,size:size,plantid:ID}),
+			  
+			  dataType: 'json',
+			  timeout: 5000,
+			  success: function(data, textStatus, xhr) 
+			  {
+	//	alert("1");
+				  if(data==0)
+					  alert("Data is not inserted");  
+				  else	  {
+  				  	data = JSON.parse(xhr.responseText);	
+				 
+
+				 document.getElementById("cost").value=data[0]['cost'];
+
+
+			}			  
+				
+			  },
+			  error: function(xhr, status, errorThrown) 
+			  {
+			//	alert("2");
+				//  alert(status + errorThrown);
+			  }
+		  });  //
+}
+
 
 	$(document).on('click',"[id^='del_']",function(){	
 			//$(this).parent().parent().remove();

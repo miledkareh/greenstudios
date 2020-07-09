@@ -227,7 +227,7 @@ function WordWrap(&$text, $maxwidth)
 function Footer()
 {
 	include('../configdb.php');
-	 $query = "Select dat from offers where Serial=".$_GET['x'];
+	 $query = "Select dat from checkin where Serial=".$_GET['x'];
 		//echo($_GET["to"]);
 	 $results = mysqli_query($dbhandle,$query)  or die(mysqli_error());
     $data = array();
@@ -237,7 +237,7 @@ function Footer()
 	$this->SetY(-28);
 	// Arial italic 8
 	$this->SetFont('Arial','',8);
-	$newDate = date("d-m-Y", strtotime(date("Y/m/d")));
+	$newDate = date("d-m-Y", strtotime($x['dat']));
 	$newDate=str_replace("-","  /  ",$newDate);
 	$this->Cell(335,16,'--------------------------------------',0,0,'C');
 	$this->Ln(4);
