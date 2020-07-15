@@ -24,7 +24,7 @@ header('Access-Control-Allow-Origin: *');
 $db = new DAL(); 
 $data=$db->getData($sql);
 
-$qql="select maintenanceid,(select country from offers where serial =(select offerid from maintenances where Serial =maintenancedetails.maintenanceid))as country from maintenancedetails where serial in (select visit from checkin where serial='".$id."' )";
+echo $qql="select maintenanceid,(select country from offers where serial =(select offerid from maintenances where Serial =maintenancedetails.maintenanceid))as country from maintenancedetails where serial in (select visit from checkin where serial='".$id."' )";
 $db = new DAL();		
 $data2=$db->getData($qql);
 
@@ -43,8 +43,10 @@ $data2=$db->getData($qql);
 	//$mail->From = 'melhayek@greenstudios.net';
 
 
-	if($data2['country']=='Kuwait')
-$mail->setFrom('hellokuwait@greenstudios.ne');
+	if($data2['country']=='Kuwait'){
+$mail->setFrom('hellokuwait@greenstudios.net');
+echo "lopoljf";
+}
 else
 	 $mail->setFrom('support@greenstudios.net');
 
@@ -55,10 +57,10 @@ else
 	 $email=explode(";",$email);
 
 
-	for($i=0;$i<sizeof($email);$i++){
-	 $mail->AddAddress($email[$i]); 
+	// for($i=0;$i<sizeof($email);$i++){
+	//  $mail->AddAddress($email[$i]); 
 
-	}
+	// }
 	//$mail->AddAddress('alex_b_1998@hotmail.com');              
 	//$mail->AddAddress('mkareh@dsoft-lb.com');
 	//$mail->AddBCC('mkareh@dsoft-lb.com');        
@@ -283,29 +285,30 @@ else
 	}
 	function Footer()
 	{
-		include('../pages/configdb.php');
-		 $query = "Select dat from offers where Serial=".$_GET['id'];
-			//echo($_GET["to"]);
-		 $results = mysqli_query($dbhandle,$query)  or die(mysqli_error());
-		$data = array();
-		while($x = mysqli_fetch_array($results)){
-			
-		// Position at 1.5 cm from bottom
-		$this->SetY(-28);
-		// Arial italic 8
-		$this->SetFont('Arial','',8);
-		$newDate = date("d-m-Y", strtotime(date("Y/m/d")));
-		$newDate=str_replace("-","  /  ",$newDate);
-		$this->Cell(335,16,'--------------------------------------',0,0,'C');
-		$this->Ln(4);
-		$this->SetFont('Arial','',10);
-		$this->Cell(335,20,$newDate,0,0,'C');
-		$this->SetFont('Arial','',8);
-		$this->RotatedText(159,277,'------------',270);
-		$this->Ln(4);
-		$this->Cell(335,22,'--------------------------------------',0,0,'C');
-		// Page number
-		}
+		include('../configdb.php');
+	 $query = "Select dat from checkin where Serial=".$_GET['x'];
+		//echo($_GET["to"]);
+	 $results = mysqli_query($dbhandle,$query)  or die(mysqli_error());
+    $data = array();
+	while($x = mysqli_fetch_array($results)){
+		
+	// Position at 1.5 cm from bottom
+	$this->SetY(-28);
+	// Arial italic 8
+	$this->SetFont('Arial','',8);
+	$newDate = date("d-m-Y", strtotime($x['dat']));
+	$newDate=str_replace("-","  /  ",$newDate);
+	$this->Cell(335,16,'--------------------------------------',0,0,'C');
+	$this->Ln(4);
+	$this->SetFont('Arial','',10);
+	$this->Cell(335,20,$newDate,0,0,'C');
+	$this->SetFont('Arial','',8);
+	$this->RotatedText(159,277,'------------',270);
+	$this->Ln(4);
+	$this->Cell(335,22,'--------------------------------------',0,0,'C');
+	// Page number
+	}
+	
 		
 	}
 	function SetDash($black=null, $white=null)
