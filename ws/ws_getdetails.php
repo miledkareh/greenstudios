@@ -17,14 +17,14 @@ $country1='';
 		else{$country1=" and country='$country' ";
 			$country=" and offerid in( select serial from offers where country='$country')";}
 		
-			$sql="select (select sum(Valuee) from maintenances where status <> 'canceled' and offerid in (select serial from offers where RGAREA > 0 OR GWAREA >0)) as Valuee,
+			$sql="select (select sum(Valuee) from maintenances where status = 'active' and offerid in (select serial from offers where RGAREA > 0 OR GWAREA >0)) as Valuee,
 			(select sum(Valuee) from maintenances where status = 'canceled') as CValuee,
 			(select sum(offervalue) From offers where serial in(select offerid from maintenances where status <> 'canceled')  $year1 $country1) as OfferValue,
 			(select sum(offervalue) From offers where serial in(select offerid from maintenances where status = 'canceled')  $year1 $country1) as COfferValue,
 			(select sum(offervalue) From offers where RGAREA >0 and serial in(select offerid from maintenances where status <> 'canceled')  $year1 $country1) as sRGoffer,
-			(select sum(Valuee) From maintenances where offerid in (select serial from offers where RGAREA>0 $year1 $country1)and status <> 'canceled') as sRGmaintenance, 
+			(select sum(Valuee) From maintenances where offerid in (select serial from offers where RGAREA>0 $year1 $country1)and   status = 'active') as sRGmaintenance, 
 			 (select sum(offervalue) From offers where GWAREA >0  and serial in(select offerid from maintenances where status <> 'canceled') $year1 $country1) as sGWoffer,
-			(select sum(Valuee) From maintenances where offerid in (select serial from offers where GWAREA>0 $year1 $country1) and status <> 'canceled') as sGWmaintenance  
+			(select sum(Valuee) From maintenances where offerid in (select serial from offers where GWAREA>0 $year1 $country1) and status = 'active') as sGWmaintenance  
 			 from maintenances where serial <>0 ".$year.$country;
 }
 else if($action==2){
@@ -53,14 +53,14 @@ $country=$_GET["country"];
 			$country1=" and country='$country' ";
 			$country=" and offerid in( select serial from offers where country='$country')";
 		}
-			$sql="select (select sum(Valuee) from maintenances where status <> 'canceled'  and offerid in (select serial from offers where RGAREA > 0 OR GWAREA >0) $fromdate $country $todate) as Valuee,
+			$sql="select (select sum(Valuee) from maintenances where status = 'active'  and offerid in (select serial from offers where RGAREA > 0 OR GWAREA >0) $fromdate $country $todate) as Valuee,
 			(select sum(Valuee) from maintenances where status = 'canceled' $fromdate $country $todate) as CValuee,
 			(select sum(offervalue) From offers where serial in(select offerid from maintenances where status <> 'canceled')  ".$fromdate1.$todate1.$country1.") as OfferValue,
 			(select sum(offervalue) From offers where serial in(select offerid from maintenances where status = 'canceled')  ".$fromdate1.$todate1.$country1.") as COfferValue,
 			(select sum(offervalue) From offers where RGAREA>0 and serial in(select offerid from maintenances where status <> 'canceled') ".$fromdate1.$todate1.$country1.") as sRGoffer,
-			(select sum(Valuee) From maintenances where offerid in (select serial from offers where RGAREA>0 ".$fromdate1.$todate1.$country1.") and status <> 'canceled') as sRGmaintenance, 
+			(select sum(Valuee) From maintenances where offerid in (select serial from offers where RGAREA>0 ".$fromdate1.$todate1.$country1.") and status = 'active') as sRGmaintenance, 
 			  (select sum(offervalue) From offers where GWAREA>0 and serial in(select offerid from maintenances where status <> 'canceled') ".$fromdate1.$todate1.$country1.") as sGWoffer,
-			(select sum(Valuee) From maintenances where offerid in (select serial from offers where GWAREA>0 ".$fromdate1.$todate1.$country1.") and status <> 'canceled') as sGWmaintenance  
+			(select sum(Valuee) From maintenances where offerid in (select serial from offers where GWAREA>0 ".$fromdate1.$todate1.$country1.") and status = 'active') as sGWmaintenance  
 			 from maintenances where serial <>0 ".$fromdate.$todate.$country;
 
 }

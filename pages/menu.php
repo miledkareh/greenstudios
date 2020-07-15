@@ -114,7 +114,7 @@ if($x = mysqli_fetch_array($results)){ if($x['cserial'] > 0)echo ("(".$x['cseria
 									<?php } ?>
 									 <?php if( $_SESSION['pestcv']==1){ ?>
 								   <li>
-                                    <a href="../pesticide/" class="fa fa-share" >Pesticide</a>
+                                    <a href="../Pesticide/" class="fa fa-share" >Pesticide</a>
                                 </li>
                                 
 									<?php } ?>

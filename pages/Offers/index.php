@@ -192,8 +192,8 @@ myModall.modal-open {
                              </div>
                              <div class="col-lg-1 nopadding">
                                <label>Country</label>	 
-                               <select  class="form-control" id="fcountry" name="fcountry" style="width: 100%;" >
-											<option selected value="All">All</option>
+                               <select  class="form-control" id="fcountry" name="fcountry[]" data-placeholder="Click to Select ..." multiple style="width: 100%;"  >
+											 
 											<?php 
 											include('../configdb.php');
 										$query="select distinct(Country) as country from offers order by country asc";
@@ -201,11 +201,29 @@ myModall.modal-open {
 											while($x = mysqli_fetch_array($results)){?>
 											<option value="<?php echo($x["country"]); ?>" <?php
 												if (isset($_POST['fcountry'])) {
-													if ($_POST['fcountry'] == $x['country'])
-														echo("selected");
+
+
+if(in_array($x['country'], $_POST['fcountry'])){echo('selected');}
+
+
+
 												}
  ?>><?php echo($x["country"]); ?></option>
+
+
+
+
+   
 											<?php } ?>
+
+
+
+
+
+
+
+
+
 											</select>
                              </div>
                               <div class="col-lg-1 nopadding">
@@ -380,10 +398,10 @@ if(isset($_POST['frg']))
 {$rg=" and RG= 1 ";}
 if(isset($_POST['fgw'])) 
 {$gw=" and GW= 1 ";}
-if(isset($_POST['fcountry']) && $_POST['fcountry'] != 'All') {$country=" and country ='".$_POST['fcountry']."'";}
-	else {
-		$country='';
-	}
+// if(isset($_POST['fcountry']) && $_POST['fcountry'] != 'All') {$country=" and country ='".$_POST['fcountry']."'";}
+// 	else {
+// 		$country='';
+// 	}
 	if(isset($_POST['fcity']) && $_POST['fcity'] != 'All') {$city=" and city ='".$_POST['fcity']."'";}
 	else {
 		$city='';
@@ -394,6 +412,9 @@ if(isset($_POST['fcountry']) && $_POST['fcountry'] != 'All') {$country=" and cou
 		$status="";
 	}
 	if(!isset($_POST['fref'])){$_POST['fref']=array(0);}
+
+if(!isset($_POST['fcountry'])){$_POST['fcountry']=array(0);}
+
 $query ="select *,(Select count(*)  from invoicereport where project=offers.serial) as cntoffer,(Select count(*)  from tasks where offerid=offers.serial) as cnttask,(select count(*) from invoicereport where project=offers.serial) as cprintout,(select company from customers where serial = offers.customerid) as Client,(select company from customers where serial = offers.referral) as Referral,(select username from users where serial=offers.lastuser) as LastUser,lastupdated,(select count(*) from offerattachment where offerid=offers.serial ".$confidential." and isnew=0) as cnt,(select count(*) from refferalnotes where offerid=offers.serial) as Refcnt,(select count(description) from offerattachment where offerid=offers.serial and main=1) as Imagee from offers where serial<>0 ";
  if($fromdate!=''){ $query =$query." and dat>='$fromdate'"; }
   if($todate!=''){ $query =$query." and dat<='$todate'"; }
@@ -406,6 +427,11 @@ $query ="select *,(Select count(*)  from invoicereport where project=offers.seri
 		if(sizeof($_POST["fref"])>0  && implode("','",$_POST["fref"])!='0'){
 		$query=$query." and referral in ('".implode("','",$_POST["fref"])."') ";
 	}
+
+
+  if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
 	//if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
 	
  $query =$query." Order by order1 asc,order2 desc,dat desc"; // OLD ORDER
@@ -555,10 +581,10 @@ while($x = mysqli_fetch_array($results)){
                                               <?php
 								
 include('../configdb.php');
-	if(isset($_POST['fcountry']) && $_POST['fcountry'] != 'All') {$country=$_POST['fcountry'];}
-	else {
-		$country='';
-	}
+//	if(isset($_POST['fcountry']) && $_POST['fcountry'] != 'All') {$country=$_POST['fcountry'];}
+//	else {
+	//	$country='';
+	//}
 	if(isset($_POST['fromdate']))
 $fromdate=$_POST['fromdate'];
 else {
@@ -571,270 +597,362 @@ else {
 }
 
 $query="select (select sum(RGAREA) from offers where status <>'COMPLETED' and status <> 'CANCELED' and manuel=0";
-if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+ 
+
+  if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
+
+ 
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.")as sRGAREA,
 				(select sum(GWAREA) from offers where status <>'COMPLETED' and status <> 'CANCELED' and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
+
+
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sGWAREA,
 				(select sum(lsarea) from offers where status <>'COMPLETED' and status <> 'CANCELED' and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+			if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sLANDAREA,
 				(select sum(OfferValue) from offers where status <>'COMPLETED' and status <> 'CANCELED' and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
 if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sOFFERVALUE,
 				(select sum(OfferValue) from offers where status ='IN HAND' and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sInHandBudget,
 				(select sum(OfferValue) from offers where status ='IN HAND' and GW=1 and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sINHANDGWBudget,
 				(select sum(OfferValue) from offers where status ='IN HAND' and RG=1 and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' ";} 
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
 if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sINHANDRGBudget,
 				(select sum(OfferValue) from offers where status ='IN HAND' and ls=1 and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sINHANDLANDOFFERBudget,
 				(select sum(remaining) from offers where status ='IN HAND' and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
 if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sINHANDRemaining,
 				
 				(select sum(OfferValue) from offers where status ='OFFER' and hp=0 and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' ";} 
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
 if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sOFFERBudget,
  (select sum(OfferValue) from offers where (status ='OFFER' or status ='INQUIRIES') and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' ";} 
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
 if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sOFFERINQBudget,
 				(select sum(OfferValue) from offers where status ='OFFER' and GW=1 and hp=0 and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
 
 if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sGWOFFERBudget,
 				(select sum(OfferValue) from offers where status ='OFFER' and RG=1 and hp=0 and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
 if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sRGOFFERBudget,
 				(select sum(OfferValue) from offers where status ='OFFER' and ls=1  and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
 if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sLANDOFFERBudget,
 				(select sum(OfferValue) from offers where status ='CANCELED' and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sCancelledBudget,
 				(select sum(OfferValue) from offers where status ='CANCELED' and GW=1 and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' ";} 
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sGWCancelledBudget,
 				(select sum(OfferValue) from offers where status ='CANCELED' and RG=1  and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sRGCancelledBudget,
 				(select sum(OfferValue) from offers where status ='CANCELED' and ls=1 and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sLANDCancelledBudget,
 				(select sum(OfferValue) from offers where status ='COMPLETED' and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sCompletedBudget,
 				(select sum(OfferValue) from offers where status ='COMPLETED' and GW=1 and manuel=0 ";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sGWCompletedBudget,
 				(select sum(OfferValue) from offers where status ='COMPLETED' and RG=1 and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sRGCompletedBudget,
 				(select sum(OfferValue) from offers where status ='COMPLETED' and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' ";} 
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sLANDCompletedBudget,
 				(select sum(remaining) from offers where status ='COMPLETED' and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sRemainingCompletedBudget,
 				(select sum(OfferValue) from offers where (status ='IN HAND' or status = 'OFFER' or status = 'INQUIRIES' ) and  hp=1 and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sHPBudget,
 				(select sum(OfferValue) from offers where (status ='IN HAND' or status = 'OFFER' or status = 'INQUIRIES' ) and  hp=1 and GW=1 and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sGWHPBudget,
 				(select sum(OfferValue) from offers where (status ='IN HAND' or status = 'OFFER' or status = 'INQUIRIES' ) and  hp=1 and RG=1 and manuel=0 ";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sRGHPBudget,
 				(select sum(OfferValue) from offers where hp=1 and ls=1 and status='OFFER' and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sLANDHPBudget,
 				(select sum(OfferValue) from offers where (status ='IN HAND' or status = 'OFFER' or status = 'INQUIRIES' or status = 'POTENTIAL') and dealer=1 and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sAgent,
 				(select sum(OfferValue) from offers where bd=1 and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sBusinessD,
 				(select sum(OfferValue) from offers where bd=1 and RG=1 and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sRGBusinessD,
 				(select sum(OfferValue) from offers where (status ='IN HAND' or status = 'OFFER' or status = 'INQUIRIES' or status = 'POTENTIAL') and dealer=1 and RG=1 and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sRGAgent,
 				(select sum(OfferValue) from offers where bd=1 and GW=1 and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sGWBusinessD,
 				(select sum(OfferValue) from offers where (status ='IN HAND' or status = 'OFFER' or status = 'INQUIRIES' or status = 'POTENTIAL') and dealer=1 and GW=1 and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sGWAgent,
 				(select sum(OfferValue) from offers where status= 'INQUIRIES' and GW=1 and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sGWINQ,
  
  (select sum(OfferValue) from offers where status = 'INQUIRIES' and RG=1 and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sRGINQ,
  
   (select sum(OfferValue) from offers where status = 'INQUIRIES' and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sINQ,
  
  (select sum(OfferValue) from offers where status = 'ARCHIVED' and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sARCHIVED,
  
  (select sum(OfferValue) from offers where status = 'ARCHIVED' and RG=1 and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sRGARCHIVED,
  
  (select sum(OfferValue) from offers where status = 'ARCHIVED' and GW=1 and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sGWARCHIVED,
  
  (select sum(remaining) from offers where status = 'ARCHIVED' and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sRemainingARCHIVED,
  
 				(select sum(OfferValue) from offers where status= 'POTENTIAL' and GW=1 and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sGWPOT,
  
  (select sum(OfferValue) from offers where status = 'POTENTIAL' and RG=1 and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
  $query =$query.") as sRGPOT,
  
   (select sum(OfferValue) from offers where status = 'POTENTIAL' and manuel=0";
-				if($country!='' && $country!='All'){$query =$query." and country='$country' ";}
+				if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
  if($fromdate!=''){ $query =$query." and Dat>='$fromdate' "; }
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
  if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial']." ";}
@@ -842,12 +960,24 @@ if($_SESSION['IsAdmin']!=1){$query =$query." and userid=".$_SESSION['UserSerial'
 				from offers ";
  if($fromdate!=''){ $query =$query." where Dat>='$fromdate' "; 
  if($todate!='' ){ $query =$query." and Dat<='$todate'";}
- if($country!='' && $country!='All'){$query =$query." and country='$country' ";}}
+  if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }}
 else if($todate!='' ){ $query =$query." where Dat<='$todate'"; 
-if($country!='' && $country!='All'){$query =$query." and country='$country' ";}}
-else
-	if($country!='' && $country!='All'){$query =$query." where country='$country' ";}
+if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." and country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
+
+  }
+else{
+  if(sizeof($_POST["fcountry"])>0  && implode("','",$_POST["fcountry"])!='0'){
+    $query=$query." where  country in ('".implode("','",$_POST["fcountry"])."') ";
+  }
+
+}
 	$query2xls=$query;
+
+  
 $results = mysqli_query($dbhandle,$query)  or die(mysqli_error());
 if($x = mysqli_fetch_array($results)){;?>
 	
@@ -2739,6 +2869,9 @@ $('#submit').click(function(){
 });
   $("#fref").select2({
   	closeOnSelect: false
+  });
+    $("#fcountry").select2({
+    closeOnSelect: false
   });
 </script>
 

@@ -182,7 +182,7 @@ tr.row_selected td{color:lightblue !important;}
                                                 	<th></th>
                                         <th>Offer</th>
                                        
-                                        <th>Maintenance</th>
+                                        <th>Active Maintenance</th>
                                         <th>Percentage</th>
                                 
                                    
