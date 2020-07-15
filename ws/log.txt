@@ -311,3 +311,93 @@
 2020-07-09 10:44:56 : SQL (SELECT * FROM plantpot where type='POT',size='100',country='LB',plantid='445' order by dat desc )
 2020-07-09 10:45:01 : SQL (SELECT * FROM plantpot where type='POT',size='100',country='LB',plantid='445' order by dat desc )
 2020-07-09 10:45:12 : SQL (SELECT * FROM plantpot where type='POT',size='100',country='LB',plantid='445' order by dat desc )
+2020-07-15 10:39:09 : SQL (select 
+		(select COALESCE(count(OfferValue), 0) from offers where status='IN HAND'  and manuel=0 and dat >= '' and dat <= '') as sInHandBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where status='OFFER'  and manuel=0 and dat >= '' and dat <= '') as sOFFERBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where status='CANCELED'  and manuel=0 and dat >= '' and dat <= '') as sCancelledBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where status='COMPLETED'  and manuel=0 and dat >= '' and dat <= '') as sCompletedBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where (status ='IN HAND' or status = 'OFFER' or status = 'INQUIRIES' or status = 'POTENTIAL') and hp=1  and manuel=0 and dat >= '' and dat <= '') as sHPBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where bd=1  and manuel=0 and dat >= '' and dat <= '') as sBusinessD,
+				(select COALESCE(count(OfferValue), 0) from offers where (status ='IN HAND' or status = 'OFFER' or status = 'INQUIRIES' or status = 'POTENTIAL') and dealer=1  and manuel=0 and dat >= '' and dat <= '') as sAgent,
+				Dat 
+				from offers and manuel = 0 and dat >= '' and dat <= '')
+2020-07-15 10:46:40 : SQL (select 
+		(select COALESCE(count(OfferValue), 0) from offers where status='IN HAND'  and manuel=0 and dat >= '' and dat <= '') as sInHandBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where status='OFFER'  and manuel=0 and dat >= '' and dat <= '') as sOFFERBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where status='CANCELED'  and manuel=0 and dat >= '' and dat <= '') as sCancelledBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where status='COMPLETED'  and manuel=0 and dat >= '' and dat <= '') as sCompletedBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where (status ='IN HAND' or status = 'OFFER' or status = 'INQUIRIES' or status = 'POTENTIAL') and hp=1  and manuel=0 and dat >= '' and dat <= '') as sHPBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where bd=1  and manuel=0 and dat >= '' and dat <= '') as sBusinessD,
+				(select COALESCE(count(OfferValue), 0) from offers where (status ='IN HAND' or status = 'OFFER' or status = 'INQUIRIES' or status = 'POTENTIAL') and dealer=1  and manuel=0 and dat >= '' and dat <= '') as sAgent,
+				Dat 
+				from offers and manuel = 0 and dat >= '' and dat <= '')
+2020-07-15 10:46:45 : SQL (select 
+		(select COALESCE(count(OfferValue), 0) from offers where status='IN HAND'  and manuel=0 and dat >= '' and dat <= '') as sInHandBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where status='OFFER'  and manuel=0 and dat >= '' and dat <= '') as sOFFERBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where status='CANCELED'  and manuel=0 and dat >= '' and dat <= '') as sCancelledBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where status='COMPLETED'  and manuel=0 and dat >= '' and dat <= '') as sCompletedBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where (status ='IN HAND' or status = 'OFFER' or status = 'INQUIRIES' or status = 'POTENTIAL') and hp=1  and manuel=0 and dat >= '' and dat <= '') as sHPBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where bd=1  and manuel=0 and dat >= '' and dat <= '') as sBusinessD,
+				(select COALESCE(count(OfferValue), 0) from offers where (status ='IN HAND' or status = 'OFFER' or status = 'INQUIRIES' or status = 'POTENTIAL') and dealer=1  and manuel=0 and dat >= '' and dat <= '') as sAgent,
+				Dat 
+				from offers and manuel = 0 and dat >= '' and dat <= '')
+2020-07-15 10:52:39 : SQL (select 
+		(select COALESCE(count(OfferValue), 0) from offers where status='IN HAND'  and manuel=0 and dat >= 'and dat >= '2016-01-01' ' and dat <= '') as sInHandBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where status='OFFER'  and manuel=0 and dat >= 'and dat >= '2016-01-01' ' and dat <= '') as sOFFERBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where status='CANCELED'  and manuel=0 and dat >= 'and dat >= '2016-01-01' ' and dat <= '') as sCancelledBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where status='COMPLETED'  and manuel=0 and dat >= 'and dat >= '2016-01-01' ' and dat <= '') as sCompletedBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where (status ='IN HAND' or status = 'OFFER' or status = 'INQUIRIES' or status = 'POTENTIAL') and hp=1  and manuel=0 and dat >= 'and dat >= '2016-01-01' ' and dat <= '') as sHPBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where bd=1  and manuel=0 and dat >= 'and dat >= '2016-01-01' ' and dat <= '') as sBusinessD,
+				(select COALESCE(count(OfferValue), 0) from offers where (status ='IN HAND' or status = 'OFFER' or status = 'INQUIRIES' or status = 'POTENTIAL') and dealer=1  and manuel=0 and dat >= 'and dat >= '2016-01-01' ' and dat <= '') as sAgent,
+				Dat 
+				from offers and manuel = 0 and dat >= 'and dat >= '2016-01-01' ' and dat <= '')
+2020-07-15 10:53:37 : SQL (select 
+		(select COALESCE(count(OfferValue), 0) from offers where status='IN HAND'  and manuel=0 and dat >= '2016-01-01'  ) as sInHandBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where status='OFFER'  and manuel=0 and dat >= '2016-01-01'  ) as sOFFERBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where status='CANCELED'  and manuel=0 and dat >= '2016-01-01'  ) as sCancelledBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where status='COMPLETED'  and manuel=0 and dat >= '2016-01-01'  ) as sCompletedBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where (status ='IN HAND' or status = 'OFFER' or status = 'INQUIRIES' or status = 'POTENTIAL') and hp=1  and manuel=0 and dat >= '2016-01-01'  ) as sHPBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where bd=1  and manuel=0 and dat >= '2016-01-01'  ) as sBusinessD,
+				(select COALESCE(count(OfferValue), 0) from offers where (status ='IN HAND' or status = 'OFFER' or status = 'INQUIRIES' or status = 'POTENTIAL') and dealer=1  and manuel=0 and dat >= '2016-01-01'  ) as sAgent,
+				Dat 
+				from offers and manuel = 0 and dat >= '2016-01-01'  )
+2020-07-15 10:53:53 : SQL (select 
+		(select COALESCE(count(OfferValue), 0) from offers where status='IN HAND'  and manuel=0 and dat >= '2016-01-01'  ) as sInHandBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where status='OFFER'  and manuel=0 and dat >= '2016-01-01'  ) as sOFFERBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where status='CANCELED'  and manuel=0 and dat >= '2016-01-01'  ) as sCancelledBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where status='COMPLETED'  and manuel=0 and dat >= '2016-01-01'  ) as sCompletedBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where (status ='IN HAND' or status = 'OFFER' or status = 'INQUIRIES' or status = 'POTENTIAL') and hp=1  and manuel=0 and dat >= '2016-01-01'  ) as sHPBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where bd=1  and manuel=0 and dat >= '2016-01-01'  ) as sBusinessD,
+				(select COALESCE(count(OfferValue), 0) from offers where (status ='IN HAND' or status = 'OFFER' or status = 'INQUIRIES' or status = 'POTENTIAL') and dealer=1  and manuel=0 and dat >= '2016-01-01'  ) as sAgent,
+				Dat 
+				from offers and manuel = 0 and dat >= '2016-01-01'  )
+2020-07-15 10:54:10 : SQL (select 
+		(select COALESCE(count(OfferValue), 0) from offers where status='IN HAND'  and manuel=0  ) as sInHandBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where status='OFFER'  and manuel=0  ) as sOFFERBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where status='CANCELED'  and manuel=0  ) as sCancelledBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where status='COMPLETED'  and manuel=0  ) as sCompletedBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where (status ='IN HAND' or status = 'OFFER' or status = 'INQUIRIES' or status = 'POTENTIAL') and hp=1  and manuel=0  ) as sHPBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where bd=1  and manuel=0  ) as sBusinessD,
+				(select COALESCE(count(OfferValue), 0) from offers where (status ='IN HAND' or status = 'OFFER' or status = 'INQUIRIES' or status = 'POTENTIAL') and dealer=1  and manuel=0  ) as sAgent,
+				Dat 
+				from offers and manuel = 0  )
+2020-07-15 10:54:37 : SQL (select 
+		(select COALESCE(count(OfferValue), 0) from offers where status='IN HAND'  and manuel=0  ) as sInHandBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where status='OFFER'  and manuel=0  ) as sOFFERBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where status='CANCELED'  and manuel=0  ) as sCancelledBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where status='COMPLETED'  and manuel=0  ) as sCompletedBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where (status ='IN HAND' or status = 'OFFER' or status = 'INQUIRIES' or status = 'POTENTIAL') and hp=1  and manuel=0  ) as sHPBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where bd=1  and manuel=0  ) as sBusinessD,
+				(select COALESCE(count(OfferValue), 0) from offers where (status ='IN HAND' or status = 'OFFER' or status = 'INQUIRIES' or status = 'POTENTIAL') and dealer=1  and manuel=0  ) as sAgent,
+				Dat 
+				from offers and manuel = 0  )
+2020-07-15 10:54:59 : SQL (select 
+		(select COALESCE(count(OfferValue), 0) from offers where status='IN HAND'  and manuel=0  ) as sInHandBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where status='OFFER'  and manuel=0  ) as sOFFERBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where status='CANCELED'  and manuel=0  ) as sCancelledBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where status='COMPLETED'  and manuel=0  ) as sCompletedBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where (status ='IN HAND' or status = 'OFFER' or status = 'INQUIRIES' or status = 'POTENTIAL') and hp=1  and manuel=0  ) as sHPBudget,
+				(select COALESCE(count(OfferValue), 0) from offers where bd=1  and manuel=0  ) as sBusinessD,
+				(select COALESCE(count(OfferValue), 0) from offers where (status ='IN HAND' or status = 'OFFER' or status = 'INQUIRIES' or status = 'POTENTIAL') and dealer=1  and manuel=0  ) as sAgent,
+				Dat 
+				from offers and manuel = 0  where 1   )

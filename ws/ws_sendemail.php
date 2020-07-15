@@ -285,7 +285,7 @@ else
 	}
 	function Footer()
 	{
-		include('../configdb.php');
+		include('../pages/configdb.php');
 	 $query = "Select dat from checkin where Serial=".$_GET['x'];
 		//echo($_GET["to"]);
 	 $results = mysqli_query($dbhandle,$query)  or die(mysqli_error());
