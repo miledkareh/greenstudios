@@ -43,7 +43,7 @@ $data2=$db->getData($qql);
 	//$mail->From = 'melhayek@greenstudios.net';
 
 
-	if($data2['country']=='Kuwait'){
+	if($data2[0]['country']=='Kuwait'){
 $mail->setFrom('hellokuwait@greenstudios.net');
 echo "lopoljf";
 }
