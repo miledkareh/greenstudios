@@ -24,7 +24,7 @@ header('Access-Control-Allow-Origin: *');
 $db = new DAL(); 
 $data=$db->getData($sql);
 
-echo $qql="select maintenanceid,(select country from offers where serial =(select offerid from maintenances where Serial =maintenancedetails.maintenanceid))as country from maintenancedetails where serial in (select visit from checkin where serial='".$id."' )";
+$qql="select maintenanceid,(select country from offers where serial =(select offerid from maintenances where Serial =maintenancedetails.maintenanceid))as country from maintenancedetails where serial in (select visit from checkin where serial='".$id."' )";
 $db = new DAL();		
 $data2=$db->getData($qql);
 
@@ -45,7 +45,7 @@ $data2=$db->getData($qql);
 
 	if($data2[0]['country']=='Kuwait'){
 $mail->setFrom('hellokuwait@greenstudios.net');
-echo "lopoljf";
+
 }
 else
 	 $mail->setFrom('support@greenstudios.net');
@@ -57,10 +57,10 @@ else
 	 $email=explode(";",$email);
 
 
-	// for($i=0;$i<sizeof($email);$i++){
-	//  $mail->AddAddress($email[$i]); 
+	for($i=0;$i<sizeof($email);$i++){
+	 $mail->AddAddress($email[$i]); 
 
-	// }
+	}
 	//$mail->AddAddress('alex_b_1998@hotmail.com');              
 	//$mail->AddAddress('mkareh@dsoft-lb.com');
 	//$mail->AddBCC('mkareh@dsoft-lb.com');        
