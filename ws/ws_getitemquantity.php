@@ -9,7 +9,18 @@ if(isset($_GET["id"])){
 	if($action==1)
 	$sql="select * from itemquantity where serial=$serial";
 	else if ($action==2)
-	$sql="select *,".$_SESSION['ViewQuantity']." as ViewQuantity from itemquantity where itemid=$serial";
+	  $sql="select *,".$_SESSION['ViewQuantity']." as ViewQuantity,
+(select q2.qty-qty from itemquantity q1 where size=q2.size  and dat=(select dat from itemquantity q3 where size=q2.size  and dat< q2.dat ORDER by dat desc limit 1) limit 1 )as diff
+
+
+
+	 from itemquantity q2 where itemid=$serial order by dat asc,size";
+	 
+
+
+
+
+
 	else if ($action==3)
 	$sql="select *,(select description from taskstatus where serial=taskfollowup.status) as statusN,(select Fullname from users where serial=taskfollowup.userid) as userN from taskfollowup where taskid=$serial";
 	else if($action==4)

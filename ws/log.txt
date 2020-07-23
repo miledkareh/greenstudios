@@ -401,3 +401,21 @@
 				(select COALESCE(count(OfferValue), 0) from offers where (status ='IN HAND' or status = 'OFFER' or status = 'INQUIRIES' or status = 'POTENTIAL') and dealer=1  and manuel=0  ) as sAgent,
 				Dat 
 				from offers and manuel = 0  where 1   )
+2020-07-23 09:37:29 : SQL (select *,1 as ViewQuantity,
+(select p2.qty-qty from plantpot p1 where size=p2.size and type=p2.type and country=p2.country and dat=(select dat from plantpot p3 where size=p2.size and type=p2.type and country=p2.country and dat< p2.dat ORDER by dat desc limit 1) limit 1  )as last 
+
+
+
+	 from itemquantity q2 where itemid=1 order by dat asc,size)
+2020-07-23 09:37:34 : SQL (select *,1 as ViewQuantity,
+(select p2.qty-qty from plantpot p1 where size=p2.size and type=p2.type and country=p2.country and dat=(select dat from plantpot p3 where size=p2.size and type=p2.type and country=p2.country and dat< p2.dat ORDER by dat desc limit 1) limit 1  )as last 
+
+
+
+	 from itemquantity q2 where itemid=1 order by dat asc,size)
+2020-07-23 09:37:40 : SQL (select *,1 as ViewQuantity,
+(select p2.qty-qty from plantpot p1 where size=p2.size and type=p2.type and country=p2.country and dat=(select dat from plantpot p3 where size=p2.size and type=p2.type and country=p2.country and dat< p2.dat ORDER by dat desc limit 1) limit 1  )as last 
+
+
+
+	 from itemquantity q2 where itemid=1 order by dat asc,size)

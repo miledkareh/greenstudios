@@ -9,7 +9,7 @@ if(isset($_GET["id"])){
 	if($action==1)
 	$sql="select * from plantpot where serial=$serial";
 	else if ($action==2)
-	  $sql="select *,1 as ViewQuantity,(select p2.qty-qty from plantpot p1 where size=p2.size and type=p2.type and country=p2.country and dat=(select dat from plantpot p3 where size=p2.size and type=p2.type and country=p2.country and dat< p2.dat ORDER by dat desc limit 1) limit 1  )as last from plantpot p2 where plantid=445 order by country asc,type asc,dat asc,size";
+	  $sql="select *,".$_SESSION['ViewQuantity']." as ViewQuantity,(select p2.qty-qty from plantpot p1 where size=p2.size and type=p2.type and country=p2.country and dat=(select dat from plantpot p3 where size=p2.size and type=p2.type and country=p2.country and dat< p2.dat ORDER by dat desc limit 1) limit 1  )as last from plantpot p2 where plantid='".$serial."' order by country asc,type asc,dat asc,size";
    
    
 

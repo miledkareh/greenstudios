@@ -330,7 +330,7 @@ function populateQuantity(data)
 	$("#followup").empty();
 		count=data.length;
 		var item;
-last_qty=0;
+ 
 		if(count>0)
 		{			
 			
@@ -342,12 +342,7 @@ last_qty=0;
 				item+=   "<td>"+row.size+"</td>";
 				
                 item+=   "<td>"+row.qty+"</td>";
-if(index==0)
-item+=   "<td>0</td>";
-else {
-	diff=Number(row.qty)-Number(last_qty);
-item+=   "<td>"+diff+"</td>";
-}
+ 				item+=   "<td>"+row.diff+"</td>";
                   
 				if(row.ViewQuantity==1){
                 item+="<td><a  id='Editt_"+row.serial+"'  data-toggle='modal' data-target='#myModal2' ><p class='fa fa-edit'></p></a>&nbsp;";
@@ -356,7 +351,7 @@ item+=   "<td>"+diff+"</td>";
 				}  
 			   item+= "</tr>";
 
-last_qty=Number(row.qty);
+ 
 			   
 				$("#followup").append(item);
 			});
