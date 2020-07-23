@@ -419,3 +419,411 @@
 
 
 	 from itemquantity q2 where itemid=1 order by dat asc,size)
+2020-07-23 12:49:19 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-07-23 12:49:38 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-07-23 09:49:40 : SQL (select * from including where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,(rg=1 or gw=1),
+			 if((select RG from offers where serial=)=1,rg=1,
+			 if((select GW from offers where serial=)=1,gw=1,'')))
+			 )
+2020-07-23 09:49:40 : SQL (select * from requirements where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,(rg_checkbox=1 or gw_checkbox=1),
+			 if((select RG from offers where serial=)=1,rg_checkbox=1,
+			 if((select GW from offers where serial=)=1,gw_checkbox=1,'')))
+			 )
+2020-07-23 13:10:27 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-07-23 13:10:51 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-07-23 13:11:59 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-07-23 13:15:14 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','budget offer',0,0,0,1,0,'','','Green Wall','0',997,'0',19,'','5 years on system','','3 months','2020//GW694/budget offer','Dear Sirs,
+
+Thank you for approaching GreenStudios.
+
+Please find below our preliminary site requirements, and budget proposal for your kind review. 
+','Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net
+
+liability notes:
+- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.',(select MAX(code) from invoicereport )))
+2020-07-23 13:15:16 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','budget offer',0,0,0,1,0,'','','Green Wall','0',997,'0',19,'','5 years on system','','3 months','2020//GW694/budget offer','Dear Sirs,
+
+Thank you for approaching GreenStudios.
+
+Please find below our preliminary site requirements, and budget proposal for your kind review. 
+','Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net
+
+liability notes:
+- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.',(select MAX(code) from invoicereport )))
+2020-07-23 13:15:17 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','budget offer',0,0,0,1,0,'','','Green Wall','0',997,'0',19,'','5 years on system','','3 months','2020//GW694/budget offer','Dear Sirs,
+
+Thank you for approaching GreenStudios.
+
+Please find below our preliminary site requirements, and budget proposal for your kind review. 
+','Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net
+
+liability notes:
+- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.',(select MAX(code) from invoicereport )))
+2020-07-23 13:15:17 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','budget offer',0,0,0,1,0,'','','Green Wall','0',997,'0',19,'','5 years on system','','3 months','2020//GW694/budget offer','Dear Sirs,
+
+Thank you for approaching GreenStudios.
+
+Please find below our preliminary site requirements, and budget proposal for your kind review. 
+','Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net
+
+liability notes:
+- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.',(select MAX(code) from invoicereport )))
+2020-07-23 13:15:18 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','budget offer',0,0,0,1,0,'','','Green Wall','0',997,'0',19,'','5 years on system','','3 months','2020//GW694/budget offer','Dear Sirs,
+
+Thank you for approaching GreenStudios.
+
+Please find below our preliminary site requirements, and budget proposal for your kind review. 
+','Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net
+
+liability notes:
+- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.',(select MAX(code) from invoicereport )))
+2020-07-23 13:15:25 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','budget offer',0,0,0,1,0,'','','Green Wall','0',997,'0',19,'','5 years on system','','3 months','2020//GW694/budget offer','Dear Sirs,
+
+Thank you for approaching GreenStudios.
+
+Please find below our preliminary site requirements, and budget proposal for your kind review. 
+','Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net
+
+liability notes:
+- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.',(select MAX(code) from invoicereport )))
+2020-07-23 13:16:26 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','budget offer',0,0,0,1,0,'','','Green Wall','0',997,'0',19,'','5 years on system','','3 months','2020//GW694/budget offer','Dear Sirs,
+
+Thank you for approaching GreenStudios.
+
+Please find below our preliminary site requirements, and budget proposal for your kind review. 
+','Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net
+
+liability notes:
+- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.',(select MAX(code) from invoicereport )))
+2020-07-23 13:16:26 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','budget offer',0,0,0,1,0,'','','Green Wall','0',997,'0',19,'','5 years on system','','3 months','2020//GW694/budget offer','Dear Sirs,
+
+Thank you for approaching GreenStudios.
+
+Please find below our preliminary site requirements, and budget proposal for your kind review. 
+','Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net
+
+liability notes:
+- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.',(select MAX(code) from invoicereport )))
+2020-07-23 13:16:27 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','budget offer',0,0,0,1,0,'','','Green Wall','0',997,'0',19,'','5 years on system','','3 months','2020//GW694/budget offer','Dear Sirs,
+
+Thank you for approaching GreenStudios.
+
+Please find below our preliminary site requirements, and budget proposal for your kind review. 
+','Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net
+
+liability notes:
+- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.',(select MAX(code) from invoicereport )))
+2020-07-23 13:16:40 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','budget offer',0,0,0,1,0,'','','Green Wall','0',997,'0',19,'','5 years on system','','3 months','2020//GW694/budget offer','Dear Sirs,
+
+Thank you for approaching GreenStudios.
+
+Please find below our preliminary site requirements, and budget proposal for your kind review. 
+','Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net
+
+liability notes:
+- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.',(select MAX(code) from invoicereport )))
+2020-07-23 13:16:41 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','budget offer',0,0,0,1,0,'','','Green Wall','0',997,'0',19,'','5 years on system','','3 months','2020//GW694/budget offer','Dear Sirs,
+
+Thank you for approaching GreenStudios.
+
+Please find below our preliminary site requirements, and budget proposal for your kind review. 
+','Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net
+
+liability notes:
+- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.',(select MAX(code) from invoicereport )))
+2020-07-23 13:16:41 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','budget offer',0,0,0,1,0,'','','Green Wall','0',997,'0',19,'','5 years on system','','3 months','2020//GW694/budget offer','Dear Sirs,
+
+Thank you for approaching GreenStudios.
+
+Please find below our preliminary site requirements, and budget proposal for your kind review. 
+','Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net
+
+liability notes:
+- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.',(select MAX(code) from invoicereport )))
+2020-07-23 13:16:41 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','budget offer',0,0,0,1,0,'','','Green Wall','0',997,'0',19,'','5 years on system','','3 months','2020//GW694/budget offer','Dear Sirs,
+
+Thank you for approaching GreenStudios.
+
+Please find below our preliminary site requirements, and budget proposal for your kind review. 
+','Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net
+
+liability notes:
+- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.',(select MAX(code) from invoicereport )))
+2020-07-23 13:16:42 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','budget offer',0,0,0,1,0,'','','Green Wall','0',997,'0',19,'','5 years on system','','3 months','2020//GW694/budget offer','Dear Sirs,
+
+Thank you for approaching GreenStudios.
+
+Please find below our preliminary site requirements, and budget proposal for your kind review. 
+','Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net
+
+liability notes:
+- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.',(select MAX(code) from invoicereport )))
+2020-07-23 13:16:43 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','budget offer',0,0,0,1,0,'','','Green Wall','0',997,'0',19,'','5 years on system','','3 months','2020//GW694/budget offer','Dear Sirs,
+
+Thank you for approaching GreenStudios.
+
+Please find below our preliminary site requirements, and budget proposal for your kind review. 
+','Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net
+
+liability notes:
+- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.',(select MAX(code) from invoicereport )))
+2020-07-23 13:16:45 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','test12385',1660,0,32,1,0,'','- Bronze jambs are excluded and subject to variation order','Green Wall supply and installation','1,2,3,5,6,23',2,'1,4,90',19,'','','','','2019//GW690/test1238511','','',(select MAX(code) from invoicereport )))
+2020-07-23 13:16:45 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','test12385',1660,0,32,1,0,'','- Bronze jambs are excluded and subject to variation order','Green Wall supply and installation','1,2,3,5,6,23',2,'1,4,90',19,'','','','','2019//GW690/test1238511','','',(select MAX(code) from invoicereport )))
+2020-07-23 13:16:46 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','test12385',1660,0,32,1,0,'','- Bronze jambs are excluded and subject to variation order','Green Wall supply and installation','1,2,3,5,6,23',2,'1,4,90',19,'','','','','2019//GW690/test1238511','','',(select MAX(code) from invoicereport )))
+2020-07-23 13:16:46 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','test12385',1660,0,32,1,0,'','- Bronze jambs are excluded and subject to variation order','Green Wall supply and installation','1,2,3,5,6,23',2,'1,4,90',19,'','','','','2019//GW690/test1238511','','',(select MAX(code) from invoicereport )))
+2020-07-23 13:17:09 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','budget offer',0,0,0,1,0,'','','Green Wall','0',997,'0',19,'','5 years on system','','3 months','2020//GW694/budget offer','Dear Sirs,
+
+Thank you for approaching GreenStudios.
+
+Please find below our preliminary site requirements, and budget proposal for your kind review. 
+','Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net
+
+liability notes:
+- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.',(select MAX(code) from invoicereport )))
+2020-07-23 13:17:11 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','budget offer',0,0,0,1,0,'','','Green Wall','0',997,'0',19,'','5 years on system','','3 months','2020//GW694/budget offer','Dear Sirs,
+
+Thank you for approaching GreenStudios.
+
+Please find below our preliminary site requirements, and budget proposal for your kind review. 
+','Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net
+
+liability notes:
+- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.',(select MAX(code) from invoicereport )))
+2020-07-23 13:17:11 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','budget offer',0,0,0,1,0,'','','Green Wall','0',997,'0',19,'','5 years on system','','3 months','2020//GW694/budget offer','Dear Sirs,
+
+Thank you for approaching GreenStudios.
+
+Please find below our preliminary site requirements, and budget proposal for your kind review. 
+','Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net
+
+liability notes:
+- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.',(select MAX(code) from invoicereport )))
+2020-07-23 13:17:15 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','budget offer',0,0,0,1,0,'','','Green Wall','0',997,'0',19,'','5 years on system','','3 months','2020//GW694/budget offer','Dear Sirs,
+
+Thank you for approaching GreenStudios.
+
+Please find below our preliminary site requirements, and budget proposal for your kind review. 
+','Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net
+
+liability notes:
+- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.',(select MAX(code) from invoicereport )))
+2020-07-23 13:17:15 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','budget offer',0,0,0,1,0,'','','Green Wall','0',997,'0',19,'','5 years on system','','3 months','2020//GW694/budget offer','Dear Sirs,
+
+Thank you for approaching GreenStudios.
+
+Please find below our preliminary site requirements, and budget proposal for your kind review. 
+','Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net
+
+liability notes:
+- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.',(select MAX(code) from invoicereport )))
+2020-07-23 13:17:15 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','budget offer',0,0,0,1,0,'','','Green Wall','0',997,'0',19,'','5 years on system','','3 months','2020//GW694/budget offer','Dear Sirs,
+
+Thank you for approaching GreenStudios.
+
+Please find below our preliminary site requirements, and budget proposal for your kind review. 
+','Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net
+
+liability notes:
+- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.',(select MAX(code) from invoicereport )))
+2020-07-23 13:17:15 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','budget offer',0,0,0,1,0,'','','Green Wall','0',997,'0',19,'','5 years on system','','3 months','2020//GW694/budget offer','Dear Sirs,
+
+Thank you for approaching GreenStudios.
+
+Please find below our preliminary site requirements, and budget proposal for your kind review. 
+','Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net
+
+liability notes:
+- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.',(select MAX(code) from invoicereport )))
+2020-07-23 13:17:28 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','budget offer',0,0,0,1,0,'','','Green Wall','0',997,'0',19,'','5 years on system','','3 months','2020//GW694/budget offer','Dear Sirs,
+
+Thank you for approaching GreenStudios.
+
+Please find below our preliminary site requirements, and budget proposal for your kind review. 
+','Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net
+
+liability notes:
+- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.',(select MAX(code) from invoicereport )))
+2020-07-23 13:17:29 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','budget offer',0,0,0,1,0,'','','Green Wall','0',997,'0',19,'','5 years on system','','3 months','2020//GW694/budget offer','Dear Sirs,
+
+Thank you for approaching GreenStudios.
+
+Please find below our preliminary site requirements, and budget proposal for your kind review. 
+','Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net
+
+liability notes:
+- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.',(select MAX(code) from invoicereport )))
+2020-07-23 13:17:29 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','budget offer',0,0,0,1,0,'','','Green Wall','0',997,'0',19,'','5 years on system','','3 months','2020//GW694/budget offer','Dear Sirs,
+
+Thank you for approaching GreenStudios.
+
+Please find below our preliminary site requirements, and budget proposal for your kind review. 
+','Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net
+
+liability notes:
+- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.',(select MAX(code) from invoicereport )))
+2020-07-23 13:17:29 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','budget offer',0,0,0,1,0,'','','Green Wall','0',997,'0',19,'','5 years on system','','3 months','2020//GW694/budget offer','Dear Sirs,
+
+Thank you for approaching GreenStudios.
+
+Please find below our preliminary site requirements, and budget proposal for your kind review. 
+','Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net
+
+liability notes:
+- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.',(select MAX(code) from invoicereport )))
+2020-07-23 13:17:29 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','budget offer',0,0,0,1,0,'','','Green Wall','0',997,'0',19,'','5 years on system','','3 months','2020//GW694/budget offer','Dear Sirs,
+
+Thank you for approaching GreenStudios.
+
+Please find below our preliminary site requirements, and budget proposal for your kind review. 
+','Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net
+
+liability notes:
+- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.',(select MAX(code) from invoicereport )))
+2020-07-23 13:17:29 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','budget offer',0,0,0,1,0,'','','Green Wall','0',997,'0',19,'','5 years on system','','3 months','2020//GW694/budget offer','Dear Sirs,
+
+Thank you for approaching GreenStudios.
+
+Please find below our preliminary site requirements, and budget proposal for your kind review. 
+','Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net
+
+liability notes:
+- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.',(select MAX(code) from invoicereport )))
+2020-07-23 13:17:30 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','budget offer',0,0,0,1,0,'','','Green Wall','0',997,'0',19,'','5 years on system','','3 months','2020//GW694/budget offer','Dear Sirs,
+
+Thank you for approaching GreenStudios.
+
+Please find below our preliminary site requirements, and budget proposal for your kind review. 
+','Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net
+
+liability notes:
+- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.',(select MAX(code) from invoicereport )))
+2020-07-23 13:17:30 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','budget offer',0,0,0,1,0,'','','Green Wall','0',997,'0',19,'','5 years on system','','3 months','2020//GW694/budget offer','Dear Sirs,
+
+Thank you for approaching GreenStudios.
+
+Please find below our preliminary site requirements, and budget proposal for your kind review. 
+','Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net
+
+liability notes:
+- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.',(select MAX(code) from invoicereport )))
+2020-07-23 13:18:38 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','budget offer',0,0,0,1,0,'','','Green Wall','0',997,'0',19,'','5 years on system','','3 months','2020//GW694/budget offer','Dear Sirs,
+
+Thank you for approaching GreenStudios.
+
+Please find below our preliminary site requirements, and budget proposal for your kind review. 
+','Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net
+
+liability notes:
+- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.',(select MAX(code) from invoicereport )))
+2020-07-23 13:18:48 : SQL (Insert into invoicereport (ritem,rarea,paymentdetails,offerdesc,clientid,ispercentage,discount,companyid,update1,excluding,notes,subject,requirement,project,including,userid,delivery,warranty,payment,validity,proposal,body1,body2,code) values 
+			(0,1,'','budget offer',0,0,0,1,0,'','','Green Wall','0',997,'0',19,'','5 years on system','','3 months','2020//GW694/budget offer','Dear Sirs,
+
+Thank you for approaching GreenStudios.
+
+Please find below our preliminary site requirements, and budget proposal for your kind review. 
+','Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net
+
+liability notes:
+- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.',(select MAX(code) from invoicereport )))
+2020-07-23 13:22:18 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-07-23 13:23:33 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-07-23 10:23:35 : SQL (select * from including where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,(rg=1 or gw=1),
+			 if((select RG from offers where serial=)=1,rg=1,
+			 if((select GW from offers where serial=)=1,gw=1,'')))
+			 )
+2020-07-23 10:23:35 : SQL (select * from requirements where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,(rg_checkbox=1 or gw_checkbox=1),
+			 if((select RG from offers where serial=)=1,rg_checkbox=1,
+			 if((select GW from offers where serial=)=1,gw_checkbox=1,'')))
+			 )
+2020-07-23 13:24:17 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-07-23 10:24:22 : SQL (select * from including where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,(rg=1 or gw=1),
+			 if((select RG from offers where serial=)=1,rg=1,
+			 if((select GW from offers where serial=)=1,gw=1,'')))
+			 )
+2020-07-23 10:24:22 : SQL (select * from requirements where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,(rg_checkbox=1 or gw_checkbox=1),
+			 if((select RG from offers where serial=)=1,rg_checkbox=1,
+			 if((select GW from offers where serial=)=1,gw_checkbox=1,'')))
+			 )
+2020-07-23 13:24:50 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-07-23 13:25:30 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-07-23 13:25:54 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-07-23 13:26:17 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-07-23 13:30:43 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-07-23 13:33:54 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-07-23 13:34:20 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-07-23 13:37:15 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-07-23 13:44:12 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-07-23 13:44:39 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-07-23 13:52:21 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-07-23 13:52:29 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-07-23 14:49:01 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-07-23 14:50:26 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-07-23 14:50:37 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-07-23 11:50:40 : SQL (select * from requirements where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,(rg_checkbox=1 or gw_checkbox=1),
+			 if((select RG from offers where serial=)=1,rg_checkbox=1,
+			 if((select GW from offers where serial=)=1,gw_checkbox=1,'')))
+			 )
+2020-07-23 11:50:40 : SQL (select * from including where companyid=1 and
+			 if((select RG from offers where serial=)=1 && (select GW from offers where serial=)=1,(rg=1 or gw=1),
+			 if((select RG from offers where serial=)=1,rg=1,
+			 if((select GW from offers where serial=)=1,gw=1,'')))
+			 )
+2020-07-23 14:51:05 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-07-23 14:51:49 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-07-23 14:52:47 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-07-23 15:22:13 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-07-23 15:22:49 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-07-23 15:23:03 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-07-23 15:23:22 : SQL ( UPDATE invoicereport SET body3='', isnew=0,rarea='1',ritem='0',paymentdetails='',offerdesc='1234 test',clientid='0',ispercentage='0',discount='00',companyid='01',update1=1,excluding='',notes='',subject='testing 222',requirement='0',project='994',including='0',userid=19,validity='3 months',payment='',delivery='',warranty='5 years on system',proposal='2020//GW697/1234 test',body1='Dear Sirs,\n\nThank you for approaching GreenStudios.\n\nPlease find below our preliminary site requirements, and budget proposal for your kind review. \n',body2='Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net\n\nliability notes:\n- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.'  ,mcode=(select Max (code)+1 from invoicereport i1 ) where serial=334)
+2020-07-23 15:23:24 : SQL ( UPDATE invoicereport SET body3='', isnew=0,rarea='1',ritem='0',paymentdetails='',offerdesc='1234 test',clientid='0',ispercentage='0',discount='00',companyid='01',update1=1,excluding='',notes='',subject='testing 222',requirement='0',project='994',including='0',userid=19,validity='3 months',payment='',delivery='',warranty='5 years on system',proposal='2020//GW697/1234 test',body1='Dear Sirs,\n\nThank you for approaching GreenStudios.\n\nPlease find below our preliminary site requirements, and budget proposal for your kind review. \n',body2='Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net\n\nliability notes:\n- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.'  ,mcode=(select Max (code)+1 from invoicereport i1 ) where serial=334)
+2020-07-23 15:23:24 : SQL ( UPDATE invoicereport SET body3='', isnew=0,rarea='1',ritem='0',paymentdetails='',offerdesc='1234 test',clientid='0',ispercentage='0',discount='00',companyid='01',update1=1,excluding='',notes='',subject='testing 222',requirement='0',project='994',including='0',userid=19,validity='3 months',payment='',delivery='',warranty='5 years on system',proposal='2020//GW697/1234 test',body1='Dear Sirs,\n\nThank you for approaching GreenStudios.\n\nPlease find below our preliminary site requirements, and budget proposal for your kind review. \n',body2='Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net\n\nliability notes:\n- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.'  ,mcode=(select Max (code)+1 from invoicereport i1 ) where serial=334)
+2020-07-23 15:23:33 : SQL ( UPDATE invoicereport SET body3='', isnew=0,rarea='1',ritem='0',paymentdetails='',offerdesc='1234 test',clientid='0',ispercentage='0',discount='00',companyid='01',update1=1,excluding='',notes='',subject='testing 222',requirement='0',project='994',including='0',userid=19,validity='3 months',payment='',delivery='',warranty='5 years on system',proposal='2020//GW697/1234 test',body1='Dear Sirs,\n\nThank you for approaching GreenStudios.\n\nPlease find below our preliminary site requirements, and budget proposal for your kind review. \n',body2='Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net\n\nliability notes:\n- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.'  ,mcode=(select Max (code)+1 from invoicereport i1 ) where serial=334)
+2020-07-23 15:23:38 : SQL ( UPDATE invoicereport SET body3='', isnew=0,rarea='1',ritem='0',paymentdetails='',offerdesc='1234 test',clientid='0',ispercentage='0',discount='00',companyid='01',update1=1,excluding='',notes='',subject='testing 222',requirement='0',project='994',including='0',userid=19,validity='3 months',payment='',delivery='',warranty='5 years on system',proposal='2020//GW697/1234 test',body1='Dear Sirs,\n\nThank you for approaching GreenStudios.\n\nPlease find below our preliminary site requirements, and budget proposal for your kind review. \n',body2='Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net\n\nliability notes:\n- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.'  ,mcode=(select Max (code)+1 from invoicereport i1 ) where serial=334)
+2020-07-23 15:23:46 : SQL ( UPDATE invoicereport SET body3='', isnew=0,rarea='1',ritem='0',paymentdetails='',offerdesc='1234 test',clientid='0',ispercentage='0',discount='00',companyid='01',update1=1,excluding='',notes='',subject='testing 222',requirement='0',project='994',including='0',userid=19,validity='3 months',payment='',delivery='',warranty='5 years on system',proposal='2020//GW697/1234 test',body1='Dear Sirs,\n\nThank you for approaching GreenStudios.\n\nPlease find below our preliminary site requirements, and budget proposal for your kind review. \n',body2='Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net\n\nliability notes:\n- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.'  ,mcode=(select Max (code)+1 from invoicereport i1 ) where serial=334)
+2020-07-23 15:24:25 : SQL ( UPDATE invoicereport SET body3='', isnew=0,rarea='1',ritem='0',paymentdetails='',offerdesc='1234 test',clientid='0',ispercentage='0',discount='00',companyid='01',update1=1,excluding='',notes='',subject='testing 222',requirement='0',project='994',including='0',userid=19,validity='3 months',payment='',delivery='',warranty='5 years on system',proposal='2020//GW697/1234 test',body1='Dear Sirs,\n\nThank you for approaching GreenStudios.\n\nPlease find below our preliminary site requirements, and budget proposal for your kind review. \n',body2='Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net\n\nliability notes:\n- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.'  ,code=(select Max (code)+1 from invoicereport i1 ) where serial=334)
+2020-07-23 15:24:28 : SQL ( UPDATE invoicereport SET body3='', isnew=0,rarea='1',ritem='0',paymentdetails='',offerdesc='1234 test',clientid='0',ispercentage='0',discount='00',companyid='01',update1=1,excluding='',notes='',subject='testing 222',requirement='0',project='994',including='0',userid=19,validity='3 months',payment='',delivery='',warranty='5 years on system',proposal='2020//GW697/1234 test',body1='Dear Sirs,\n\nThank you for approaching GreenStudios.\n\nPlease find below our preliminary site requirements, and budget proposal for your kind review. \n',body2='Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net\n\nliability notes:\n- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.'  ,code=(select Max (code)+1 from invoicereport i1 ) where serial=334)
+2020-07-23 15:24:36 : SQL ( UPDATE invoicereport SET body3='', isnew=0,rarea='1',ritem='0',paymentdetails='',offerdesc='1234 test',clientid='0',ispercentage='0',discount='00',companyid='01',update1=1,excluding='',notes='',subject='testing 222',requirement='0',project='994',including='0',userid=19,validity='3 months',payment='',delivery='',warranty='5 years on system',proposal='2020//GW697/1234 test',body1='Dear Sirs,\n\nThank you for approaching GreenStudios.\n\nPlease find below our preliminary site requirements, and budget proposal for your kind review. \n',body2='Should you find our offer satisfactory, you are kindly requested to return the copy of the offer attached duly signed at the below address or to by email to hello@greenstudios.net\n\nliability notes:\n- GreenStudios or any assigned installer, are not responsbile for any damages or delays coming  from water , artificial lights (if needed) or electricity interruptions/cuts.'  ,code=(select Max (code)+1 from invoicereport i1 ) where serial=334)
+2020-07-23 15:29:20 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
+2020-07-23 15:30:45 : SQL (Insert into invoicereport (userid,isnew,project,clientid) values (19,1,,))
