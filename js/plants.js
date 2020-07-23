@@ -444,10 +444,10 @@ function populatePlantPot(data)
 			size=0;
 		   $.each(data, function(index, row) {
 
-if(index==0){
-	country=row.country;
-	size=row.size;
-}
+// if(index==0){
+// 	country=row.country;
+// 	size=row.size;
+// }
 
 				item = "<tr id='tr_"+row.serial+"'>";
                 item+=   "<td>"+row.type+"</td>";
@@ -456,38 +456,38 @@ if(index==0){
 				item+=   "<td>"+row.dat+"</td>";
 				item+=   "<td>"+row.qty+"</td>";
 
-if(country!=row.country){
-	diff_pot=0;
-			lastqty_pot=0;
+// if(country!=row.country){
+// 	diff_pot=0;
+// 			lastqty_pot=0;
 
-			diff_tray=0;
-			lastqty_tray=0;
-}
+// 			diff_tray=0;
+// 			lastqty_tray=0;
+// }
 
-if(size!=row.size){
-	diff_pot=0;
-			lastqty_pot=0;
+// if(size!=row.size){
+// 	diff_pot=0;
+// 			lastqty_pot=0;
 
-			diff_tray=0;
-			lastqty_tray=0;
-}
+// 			diff_tray=0;
+// 			lastqty_tray=0;
+// }
 	
 
 
- if(row.type=='POT'){
-if(lastqty_pot==0)
-	diff_pot=0;
-else
-diff_pot=Number(row.qty)-Number(lastqty_pot);
-item+=   "<td>"+diff_pot+"</td>";
-}
-else{
-	if(lastqty_tray==0)
-	diff_tray=0;
-else
-diff_tray=Number(row.qty)-Number(lastqty_tray);
-item+=   "<td>"+diff_tray+"</td>";
-}
+//  if(row.type=='POT'){
+// if(lastqty_pot==0)
+// 	diff_pot=0;
+// else
+// diff_pot=Number(row.qty)-Number(lastqty_pot);
+item+=   "<td>"+row.last+"</td>";
+// }
+// else{
+// 	if(lastqty_tray==0)
+// 	diff_tray=0;
+// else
+// diff_tray=Number(row.qty)-Number(lastqty_tray);
+// item+=   "<td>"+diff_tray+"</td>";
+// }
 
 				
 				if(row.ViewQuantity==1){
