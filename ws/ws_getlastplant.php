@@ -9,7 +9,7 @@ $_SESSION['timeout'] = time();
 		$country=$_GET['country'];
 		$plantid=$_GET['plantid'];
 	 
-	  $sql="SELECT * FROM plantpot where type='".$type."' and size='".$size."' and  country='".$country."' and  plantid='".$plantid."' order by dat desc ";
+	  $sql="SELECT * FROM plantpot where type='".$type."' and size='".$size."'   and  plantid='".$plantid."' order by dat desc ";
  
 	
 	try {

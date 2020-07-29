@@ -182,6 +182,7 @@ while($x = mysqli_fetch_array($results)){
                                        <th>Price KD</th>
                                        <th>Price AED</th>
                                         <th>Cost</th>
+                                               <th>Total Cost</th>
                                          <th>Usual Supplier</th>
                                        <?php }?>
                                         <th>Group</th>
@@ -224,6 +225,7 @@ if(isset($_POST['radio'])){
 
 include('../configdb.php');
 $query = "Select *,
+(select cost*qty from itemquantity where itemid=items.serial order by dat desc limit 1 )as totalcost,
 (select url from itemattachment where itemid=items.serial limit 1) as url,
 (select symbol from currencies where serial=items.currency)as currencyS,
 (select description from itemscategory where serial=items.cat)as cat,
@@ -255,6 +257,7 @@ while($x = mysqli_fetch_array($results)){?>
                  					<td><?php echo($x["pricekd"]);?></td>
                  					<td><?php echo($x["priceaed"]);?></td>
                  					<td><?php echo($x["cost"]);?></td>
+                          <td><?php echo($x["totalcost"]);?></td>
                  					<td><?php echo($x["usupplier"]);?></td>
                  					<?php }?>
                  						<td><?php echo($x["groupN"]);?></td>
@@ -441,7 +444,7 @@ mysqli_data_seek($results, 0);
 			<table align="left" style="width: 100%;" border="1">
 				<thead>
                 <th>Date</th>
-					<th>Size</th>
+					<th>Cost</th>
 					<th>Quantity</th>
           <th>Difference</th>
                     <?php if ($_SESSION['ViewQuantity']==1){?>
@@ -496,7 +499,7 @@ mysqli_data_seek($results, 0);
 
         <div class="modal-body" align="center">	
 			
-	<label>Size</label><input class="form-control" type="text"   name="size"  id="size" style="width:100%;" >
+	  <label>Cost</label><input class="form-control" type="text"   name="size"  id="size" style="width:100%;" >
 		<label>Quantity</label><input class="form-control" type="number"   name="qty"  id="qty" style="width:100%;" >
 
         </div>

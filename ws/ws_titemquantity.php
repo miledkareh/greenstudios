@@ -20,7 +20,7 @@ $_SESSION['timeout'] = time();
 		
 		$qty = $_GET["qty"];
 		
-		$sql="Insert into itemquantity (dat,size,itemid,qty) values (CURRENT_DATE(),'$size',$itemid,'$qty')";
+		$sql="Insert into itemquantity (dat,cost,itemid,qty) values (CURRENT_DATE(),'$size',$itemid,'$qty')";
 		$db = new DAL();		
 		$data=$db->ExecuteQuery($sql);
 		
@@ -45,7 +45,7 @@ $_SESSION['timeout'] = time();
 		
 		$qty = $_GET["qty"];
 	
-		$sql=" UPDATE itemquantity SET `dat`='$date',size='$size',itemid=$itemid,qty='$qty' where serial=$id";
+		$sql=" UPDATE itemquantity SET `dat`='$date',cost='$size',itemid=$itemid,qty='$qty' where serial=$id";
 		$db = new DAL();		
 		$data=$db->ExecuteQuery($sql);
 		

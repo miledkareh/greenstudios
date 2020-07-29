@@ -93,7 +93,7 @@ $("#myModal2").on('hidden.bs.modal', function (e) {
 			{		
 			
 
-		document.getElementById("size").value=data[0]["size"];
+		document.getElementById("size").value=data[0]["cost"];
 		document.getElementById("qty").value=data[0]["qty"];
 			}
 	}
@@ -339,7 +339,7 @@ function populateQuantity(data)
 				item = "<tr id='tr_"+row.serial+"'>";
 				item+=   "<td>"+row.dat+"</td>";
               
-				item+=   "<td>"+row.size+"</td>";
+				item+=   "<td>"+row.cost+"</td>";
 				
                 item+=   "<td>"+row.qty+"</td>";
  				item+=   "<td>"+row.diff+"</td>";

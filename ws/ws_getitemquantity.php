@@ -10,11 +10,11 @@ if(isset($_GET["id"])){
 	$sql="select * from itemquantity where serial=$serial";
 	else if ($action==2)
 	  $sql="select *,".$_SESSION['ViewQuantity']." as ViewQuantity,
-(select q2.qty-qty from itemquantity q1 where size=q2.size and itemid=$serial  and dat=(select dat from itemquantity q3 where size=q2.size and itemid=$serial  and dat< q2.dat ORDER by dat desc limit 1) limit 1 )as diff
+(select q2.qty-qty from itemquantity q1 where   itemid=$serial  and dat=(select dat from itemquantity q3 where  itemid=$serial  and dat< q2.dat ORDER by dat desc limit 1) limit 1 )as diff
 
 
 
-	 from itemquantity q2 where itemid=$serial order by dat asc,size";
+	 from itemquantity q2 where itemid=$serial order by dat asc";
 	 
 
 

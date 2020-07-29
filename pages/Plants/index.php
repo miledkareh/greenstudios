@@ -988,7 +988,7 @@ while($x = mysqli_fetch_array($results)){?>
 			<table align="left" style="width: 100%;" border="1">
 				<thead>
 					<th>Type</th>
-					<th>Country</th>
+					<th>Cost</th>
 					<th>Size</th>
 					<th>Date</th>
 					<th>QTY</th>
@@ -1055,7 +1055,7 @@ while($x = mysqli_fetch_array($results)){?>
 				 <option value="POT">POT</option>
 				<option value="Tray">Tray</option>	
 						</select>
-							<label>Country</label><select name="country" class="form-control" id="country1"   style="width: 100%;" >
+							<label style="display: none;">Country</label><select style="display: none;" name="country" class="form-control" id="country1"   style="width: 100%;" >
 				<?php 
 											include('../configdb.php');
 										$query="select distinct(Country) as country from offers order by country asc";

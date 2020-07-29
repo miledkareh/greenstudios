@@ -451,7 +451,7 @@ function populatePlantPot(data)
 
 				item = "<tr id='tr_"+row.serial+"'>";
                 item+=   "<td>"+row.type+"</td>";
-                item+=   "<td>"+row.country+"</td>";
+                item+=   "<td>"+row.cost+"</td>";
 				item+=   "<td>"+row.size+"</td>";
 				item+=   "<td>"+row.dat+"</td>";
 				item+=   "<td>"+row.qty+"</td>";
