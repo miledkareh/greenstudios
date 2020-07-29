@@ -39,8 +39,7 @@ $_SESSION['timeout'] = time();
 		{
 		$id=$_GET["serial"];
 		
-		$size = $_GET["size"];
-		$date = $_GET["date"];
+		$size = $_GET["size"]; 
 		$itemid = $_GET["itemid"];
 		
 		$qty = $_GET["qty"];
