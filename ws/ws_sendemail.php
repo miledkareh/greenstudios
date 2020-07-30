@@ -51,7 +51,7 @@ else
 	 $mail->setFrom('support@greenstudios.net');
 
 
-     $mail->addReplyTo('lkalpaklian@greenstudios.net', 'Lea Kalpaklian');
+    // $mail->addReplyTo('lkalpaklian@greenstudios.net', 'Lea Kalpaklian');
 
 	$mail->FromName = 'Green Studios';
 	 $email=explode(";",$email);
