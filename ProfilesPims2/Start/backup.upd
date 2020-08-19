@@ -1,0 +1,11 @@
+Title = Backup of PIMSUSER data to \ROOT\PIMSBACKUP FOLDER
+
+;---------------------------------------------------------
+Message    = per-Month backup
+LEFTPATH   = \\GREEEN-STUDIOS\Data\Profiles\DATA
+RIGHTPATH  = C:\BKUPData\Y{YEAR2}\M{MTHnum}\day{DAYNUM}\data
+UPDATEMODE = LMaster
+EXCLUDE    = IDX\*.*, *.NET, *.TBK, *.PBF, *.PX, *.XH*, *.XG*, *.X0*, *.y* , *.ADI, *.BAK         
+EXECUTE
+;---------------------------------------------
+

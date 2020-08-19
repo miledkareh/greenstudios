@@ -1,0 +1,94 @@
+ * This contents file was created with the free trial version of HelpScribble 6.2.0
+ * Help files created with the free trial version must not be distributed.
+
+:BASE PIMS2.hlp
+:TITLE PIMS2 Help
+1 PIMS, Administrative
+2 The Operator in PIMS
+3 PIMS Operators=Scribble200
+3 Operator Login into PIMS=Scribble10
+3 Operator Group=Scribble60
+3 Operator is Administrator=Scribble90
+3 Operator Password=Scribble80
+3 Operators, Access Page=Scribble110
+3 Operator Companies=Scribble70
+3 Date of Last Access=Scribble50
+3 Operator is Administrator=Scribble90
+3 Print list of Operators=Scribble100
+2 Companies and Branches
+3 Branches=Scribble1320
+3 Selecting current Branch=Scribble1330
+2 Currencies and Rates
+3 Currencies=Scribble202
+3 Currency International Code=Scribble192
+3 Currency rate direction=Scribble182
+3 Amounts Decimals per Currency=Scribble212
+3 Currency Rate Min & Max=Scribble171
+3 Adding new currency rate=Scribble262
+3 Deleting a Currency-Rate=Scribble252
+3 List of Currencies=Scribble222
+3 List of Rates=Scribble242
+1 PIMS, Technical
+2 Reports, Printing and Exporting
+3 Issuing the Report
+4 Start Printing: the Go button=Scribble900
+4 Quit printing=Scribble890
+4 Keeping the Printing panel open=Scribble1270
+4 Printing Destination=Scribble860
+4 Printing, changing selection=Scribble870
+4 Printing Paper Form=Scribble880
+4 Printing Preview on Screen=Scribble910
+4 Printing on Paper=Scribble920
+4 Exporting the output to a text-file=Scribble930
+4 Exporting the output to an Excel file=Scribble940
+4 Exporting the output to a Word document=Scribble950
+4 Exporting the output as HTML=Scribble960
+4 Exporting the output as a PDF file=Scribble970
+3 Paper-Forms Layouts
+4 Paper-Forms Layouts=Scribble1200
+4 Paper-Form Top and Bottom Margins=Scribble1220
+4 Print Company-Name Header=Scribble1210
+4 Number of Copies to be printed=Scribble1240
+4 Paper-Layout, shrinking printing vertically =Scribble1230
+4 Paper-Form Layout, Page Sample=Scribble1250
+4 Memo message printed on every page=Scribble1260
+2 Reindexing tables=Scribble190
+2 The Certification of Data-Files
+3 Certification Start Button=Scribble170
+3 Files being certified=Scribble20
+3 Keep History CheckBox=Scribble30
+3 Report Warnings CheckBox=Scribble40
+3 Extra-Strong Certification=Scribble180
+1 Managing Items (the Selector)
+2 Element Description=Scribble172
+2 Cancel Button=Scribble140
+2 Delete Button=Scribble150
+2 Typing a Code for an Item to be created=Scribble160
+2 Next or Previous Item=Scribble130
+2 Find by Name or by Description=Scribble120
+1 Transactions
+2 Renumbering Transactions
+3 Renumbering Transactions=Scribble700
+3 Company where renumbering is performed=Scribble720
+3 Table being renumbered=Scribble750
+3 Type of Document being renumbered=Scribble730
+3 First number in sequence=Scribble760
+3 Preparing the new seqential numbers=Scribble710
+3 Applying the prepared renumbering=Scribble740
+1 The Payroll
+2 the Employee
+3 Employee Marital Status=Scribble300
+2 the Family of the Employee
+3 Employee Family=Scribble630
+3 Adding, Modifying, Removing Family-Members=Scribble690
+3 Family-Member Name=Scribble660
+3 Familiy-Member Relationship=Scribble640
+3 Family-Member Birth Date=Scribble670
+3 Family-Member Responsability=Scribble650
+3 Family-Member Responsibility Comment=Scribble680
+3 Employee Alternate Code=Scribble310
+2 Paying Extra-Months
+3 Extra Months payable to employees=Scribble1280
+3 Extra-Month Percentage as per Seniority=Scribble1290
+3 Extra-Month payable When, and How Much=Scribble1300
+3 Extra-Month declared / taxable=Scribble1310

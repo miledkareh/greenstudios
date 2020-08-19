@@ -1,0 +1,12 @@
+Title    = Starting PIMS
+
+
+LeftPath     = \\GREEEN-STUDIOS\DATA\Profiles\PIMSprog
+RightPath    = C:\PIMS2
+UpdateMode   = LMaster
+EXCLUDE      = *.NET, *.LCK
+Execute
+
+ExitFolder   = C:\PIMS2
+ExitProgram  = C:\PIMS2\pims2.exe \\GREEEN-STUDIOS\DATA\Profiles\Start\GreenStd.pms \\GREEEN-STUDIOS\Data\Profiles\TEST
+
