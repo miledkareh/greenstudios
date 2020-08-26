@@ -159,6 +159,9 @@ $y = mysqli_fetch_array($results);?>
   if ($_SESSION['oce'] != 1) { echo('disabled'); }
 ?> >Add BOQ</button>
                              </div>
+                             <div class="col-md-2">
+                             <a class="btn btn-outline  btn-primary" href="boq_rpt_all.php?serial=<?php echo $_GET['offerid'];?>" target="_blank">Print</a>
+                             </div>
                                  
             </div>
 						

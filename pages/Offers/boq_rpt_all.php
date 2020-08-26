@@ -119,6 +119,40 @@ $pdf->AddPage();
 
 include('../configdb.php');
 $query="select *,
+(select sum(gw_area) from boq where offer_id=".$_GET['serial'].") as gw_area,
+(select sum(jambsqty) from boq where offer_id=".$_GET['serial'].") as jambsqty,
+(select sum(corners) from boq where offer_id=".$_GET['serial'].") as corners,
+(select sum(jambsanchors) from boq where offer_id=".$_GET['serial'].") as jambsanchors,
+(select sum(jambswater) from boq where offer_id=".$_GET['serial'].") as jambswater,
+(select sum(omegaqty) from boq where offer_id=".$_GET['serial'].") as omegaqty,
+(select sum(omegaanchors) from boq where offer_id=".$_GET['serial'].") as omegaanchors,
+(select sum(omegawater) from boq where offer_id=".$_GET['serial'].") as omegawater,
+(select sum(pvcqty) from boq where offer_id=".$_GET['serial'].") as pvcqty,
+(select sum(pvcclose) from boq where offer_id=".$_GET['serial'].") as pvcclose,
+(select sum(pvcwater) from boq where offer_id=".$_GET['serial'].") as pvcwater,
+
+(select sum(pipe) from boq where offer_id=".$_GET['serial'].") as pipe,
+(select sum(gs) from boq where offer_id=".$_GET['serial'].") as gs,
+(select sum(lockk) from boq where offer_id=".$_GET['serial'].") as lockk,
+
+(select sum(skin) from boq where offer_id=".$_GET['serial'].") as skin,
+(select sum(emitters) from boq where offer_id=".$_GET['serial'].") as emitters,
+(select sum(elbowqty) from boq where offer_id=".$_GET['serial'].") as elbowqty,
+(select sum(ballqty) from boq where offer_id=".$_GET['serial'].") as ballqty,
+
+(select sum(adapterqty) from boq where offer_id=".$_GET['serial'].") as adapterqty,
+(select sum(skinqty) from boq where offer_id=".$_GET['serial'].") as skinqty,
+(select sum(skinadd) from boq where offer_id=".$_GET['serial'].") as skinadd,
+(select sum(staples) from boq where offer_id=".$_GET['serial'].") as staples,
+(select sum(staplesqty) from boq where offer_id=".$_GET['serial'].") as staplesqty,
+(select sum(plumbsysqty) from boq where offer_id=".$_GET['serial'].") as plumbsysqty,
+
+(select sum(microqty) from boq where offer_id=".$_GET['serial'].") as microqty,
+
+(select sum(sensorssm150t) from boq where offer_id=".$_GET['serial'].") as sensorssm150t,
+
+
+
 (select name from microcontrollers where serial=boq.microtype)as MICRO,
 (select description  from items where serial=boq.closetype )as CLOSETYPE, 
 (select dimension  from items where serial=boq.closetype )as CLOSETYPEDIM,
@@ -149,7 +183,7 @@ $query="select *,
 
 (select description from microcontrollers where serial=boq.microtype)as Description
 
- from boq where serial='".$_GET['serial']."' ";
+ from boq where offer_id='".$_GET['serial']."' ";
 
 
 
@@ -182,14 +216,6 @@ $query="select *,
 <tr>
 <th align="left">Date : </th>
  <th align="left">'.date("Y-m-d").'</th>
-</tr>
-<tr>
-<th align="left">Height : </th>
- <th align="left">'.$x['gw_height'].'</th>
-</tr>
-<tr>
-<th align="left">Width : </th>
- <th align="left">'.$x['gw_width'].'</th>
 </tr>
 </table><br><br>';
 $html .='
